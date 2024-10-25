@@ -22,7 +22,7 @@
     position: relative;
     z-index: 5;
     display: block;
-    @include adaptiveValue("max-width", 161, 85,0,1440.98,480.98);
+    @include adaptiveValue("max-width", 161, 136,0,1440.98,480.98);
     img {
       width: 100%;
       height: auto;

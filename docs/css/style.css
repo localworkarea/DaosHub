@@ -481,7 +481,7 @@ body {
   display: grid;
   gap: 3.5rem 2.8125rem
 }
-.events__item {
+.events__body {
   display: flex;
   flex-direction: column;
   backdrop-filter: blur(49px);
@@ -545,7 +545,7 @@ body {
     margin-inline: auto;
     margin-bottom: 25%
   }
-  .events__item:nth-child(2) {
+  .events__item:nth-child(2) .events__body {
     -webkit-transform: translateY(65%);
     transform: translateY(65%)
   }
@@ -720,10 +720,10 @@ body {
   .community__title {
     font-size: 14.375rem
   }
-  .events__item {
+  .events__body {
     border-radius: 3.125rem
   }
-  .events__item {
+  .events__body {
     padding: 4.25rem
   }
   .events__img {
@@ -949,7 +949,7 @@ body {
     min-height: 3.375rem
   }
   .header__logo {
-    max-width: 5.3125rem
+    max-width: 8.5rem
   }
   .hero {
     background-image: url(../img/hero/hero-bg-mb.webp)
@@ -1000,10 +1000,10 @@ body {
   .community__title-wr {
     background-image: url(../img/community/community-mb.webp)
   }
-  .events__item {
+  .events__body {
     border-radius: .625rem
   }
-  .events__item {
+  .events__body {
     padding: 1.5rem
   }
 }
@@ -1144,10 +1144,10 @@ body {
   .community__title {
     font-size: clamp(7.1875rem ,2.8720651042rem + 4.7916666667vw ,14.375rem)
   }
-  .events__item {
+  .events__body {
     border-radius: clamp(1.25rem ,.124234375rem + 1.25vw ,3.125rem)
   }
-  .events__item {
+  .events__body {
     padding: clamp(2.125rem ,.8491322917rem + 1.4166666667vw ,4.25rem)
   }
   .events__img {
@@ -1229,7 +1229,7 @@ body {
     min-height: clamp(3.375rem ,1.1517200521rem + 7.3958333333vw ,7.8125rem)
   }
   .header__logo {
-    max-width: clamp(5.3125rem ,2.9326510417rem + 7.9166666667vw ,10.0625rem)
+    max-width: clamp(8.5rem ,7.7171549479rem + 2.6041666667vw ,10.0625rem)
   }
   .hero__subtitle {
     font-size: clamp(1.875rem ,.8729583333rem + 3.3333333333vw ,3.875rem)
@@ -1262,10 +1262,10 @@ body {
   .social__txt {
     font-size: clamp(1.125rem ,.9058033854rem + .7291666667vw ,1.5625rem)
   }
-  .events__item {
+  .events__body {
     border-radius: clamp(.625rem ,.3118619792rem + 1.0416666667vw ,1.25rem)
   }
-  .events__item {
+  .events__body {
     padding: clamp(1.5rem ,1.1868619792rem + 1.0416666667vw ,2.125rem)
   }
 }

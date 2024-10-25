@@ -494,7 +494,8 @@
     }
   }
   // .events__item
-  &__item {
+  // &__item,
+  &__body {
     display: flex;
     flex-direction: column;
     backdrop-filter: blur(49px);
@@ -506,12 +507,19 @@
     @include adaptiveValue("border-radius", 20,10,3,1440.98,480.98);
     @include adaptiveValue("padding", 68, 34,2,3840.98,1440.98);
     @include adaptiveValue("padding", 34, 24,3,1440.98,480.98);
+  }
+  &__item {
     &:nth-child(2) {
       @media (min-width:toEm(700.98)){
-        transform: translateY(65%);
+        .events__body {
+          transform: translateY(65%);
+        }
       }
     }
   }
+	// .events__body
+	&__body {
+	}
   // .events__img
   &__img {
     @include adaptiveValue("margin-bottom", 50, 25,2,3840.98,1440.98);
