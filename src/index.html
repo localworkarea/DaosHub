@@ -3,7 +3,7 @@
 	@@include('html/_head.htm',{
 	"title":"Daos Hub"
 	})
-	<body>
+	<body data-smooth-scroll="true">
 		<div class="wrapper">
 			@@include('html/_header.htm',{})
 			<main class="page">
@@ -19,6 +19,7 @@
 							<span>Application for membership</span>
 						</a>
 					</div>
+					<span class="hero__mask"></span>
 				</section>
 				<section class="what">
 					<div class="what__container">
@@ -213,8 +214,8 @@
 					</div>
 					<div class="community__container">
 						<div class="community__events events">
-							<div data-prlx-parent class="events__items">
-								<article class="events__item">
+							<div class="events__items">
+								<article  class="events__item">
 									<div class="events__body">
 										<div class="events__img">
 											<img class="ibg" loading="lazy" src="@img/community/community-01.jpg" width="500" height="526" alt="Image">
@@ -229,7 +230,7 @@
 										</div>
 									</div>
 								</article>
-								<article data-prlx class="events__item">
+								<article class="events__item">
 									<div class="events__body">
 										<div class="events__img">
 											<img class="ibg" loading="lazy" src="@img/community/community-02.jpg" width="500" height="526" alt="Image">
@@ -245,7 +246,7 @@
 									</div>
 								</article>
 							</div>
-							<div data-prlx-parent class="events__items">
+							<div class="events__items">
 								<article class="events__item">
 									<div class="events__body">
 										<div class="events__img">
@@ -261,7 +262,7 @@
 										</div>
 									</div>
 								</article>
-								<article data-prlx class="events__item">
+								<article class="events__item">
 									<div class="events__body">
 										<div class="events__img">
 											<img class="ibg" loading="lazy" src="@img/community/community-04.jpg" width="500" height="526" alt="Image">
@@ -277,7 +278,7 @@
 									</div>
 								</article>
 							</div>
-							<div data-prlx-parent class="events__items">
+							<div class="events__items">
 								<article class="events__item">
 									<div class="events__body">
 										<div class="events__img">
@@ -293,7 +294,7 @@
 										</div>
 									</div>
 								</article>
-								<article data-prlx class="events__item">
+								<article class="events__item">
 									<div class="events__body">
 										<div class="events__img">
 											<img class="ibg" loading="lazy" src="@img/community/community-06.jpg" width="500" height="526" alt="Image">
@@ -313,24 +314,11 @@
 						<div class="community__mask"></div>
 					</div>
 				</section>
-				<section class="support">
-					<div class="support__container">
-						<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus officiis nobis possimus recusandae quasi. Beatae, maiores deleniti reiciendis quisquam quas perspiciatis dolor dicta provident ea. Earum fugiat in consequuntur ipsum.</p><br><br><br><br><br><br>
-						<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus officiis nobis possimus recusandae quasi. Beatae, maiores deleniti reiciendis quisquam quas perspiciatis dolor dicta provident ea. Earum fugiat in consequuntur ipsum.</p><br><br><br><br><br><br>
-						<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus officiis nobis possimus recusandae quasi. Beatae, maiores deleniti reiciendis quisquam quas perspiciatis dolor dicta provident ea. Earum fugiat in consequuntur ipsum.</p><br><br><br><br><br><br>
-						<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus officiis nobis possimus recusandae quasi. Beatae, maiores deleniti reiciendis quisquam quas perspiciatis dolor dicta provident ea. Earum fugiat in consequuntur ipsum.</p><br><br><br><br><br><br>
-						<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus officiis nobis possimus recusandae quasi. Beatae, maiores deleniti reiciendis quisquam quas perspiciatis dolor dicta provident ea. Earum fugiat in consequuntur ipsum.</p><br><br><br><br><br><br>
-						<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus officiis nobis possimus recusandae quasi. Beatae, maiores deleniti reiciendis quisquam quas perspiciatis dolor dicta provident ea. Earum fugiat in consequuntur ipsum.</p><br><br><br><br><br><br>
-						<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus officiis nobis possimus recusandae quasi. Beatae, maiores deleniti reiciendis quisquam quas perspiciatis dolor dicta provident ea. Earum fugiat in consequuntur ipsum.</p><br><br><br><br><br><br>
-						<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus officiis nobis possimus recusandae quasi. Beatae, maiores deleniti reiciendis quisquam quas perspiciatis dolor dicta provident ea. Earum fugiat in consequuntur ipsum.</p><br><br><br><br><br><br>
-						<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus officiis nobis possimus recusandae quasi. Beatae, maiores deleniti reiciendis quisquam quas perspiciatis dolor dicta provident ea. Earum fugiat in consequuntur ipsum.</p><br><br><br><br><br><br>
-						<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus officiis nobis possimus recusandae quasi. Beatae, maiores deleniti reiciendis quisquam quas perspiciatis dolor dicta provident ea. Earum fugiat in consequuntur ipsum.</p><br><br><br><br><br><br>
-						<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus officiis nobis possimus recusandae quasi. Beatae, maiores deleniti reiciendis quisquam quas perspiciatis dolor dicta provident ea. Earum fugiat in consequuntur ipsum.</p><br><br><br><br><br><br>
-					</div>
-				</section>
 			</main>
 			@@include('html/_footer.htm',{})
 		</div>
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 		@@include('html/_js.htm',{})
 	</body>
 </html>

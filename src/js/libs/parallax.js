@@ -89,3 +89,4 @@ Parallax.Each = class {
 if (document.querySelectorAll('[data-prlx-parent]')) {
 	flsModules.parallax = new Parallax(document.querySelectorAll('[data-prlx-parent]'));
 }
+

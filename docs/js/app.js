@@ -1,28 +1,5 @@
 (() => {
     "use strict";
-    let isMobile = {
-        Android: function() {
-            return navigator.userAgent.match(/Android/i);
-        },
-        BlackBerry: function() {
-            return navigator.userAgent.match(/BlackBerry/i);
-        },
-        iOS: function() {
-            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-        },
-        Opera: function() {
-            return navigator.userAgent.match(/Opera Mini/i);
-        },
-        Windows: function() {
-            return navigator.userAgent.match(/IEMobile/i);
-        },
-        any: function() {
-            return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows();
-        }
-    };
-    function addTouchClass() {
-        if (isMobile.any()) document.documentElement.classList.add("touch");
-    }
     let bodyLockStatus = true;
     let bodyLockToggle = (delay = 500) => {
         if (document.documentElement.classList.contains("lock")) bodyUnlock(delay); else bodyLock(delay);
@@ -159,7 +136,117 @@
     }
     const da = new DynamicAdapt("max");
     da.init();
+    gsap.registerPlugin(ScrollTrigger);
+    const heroSection = document.querySelector(".hero");
+    const heroMask = document.querySelector(".hero__mask");
+    const whatSection = document.querySelector(".what");
+    const imgBlocks = document.querySelectorAll(".img-block__mask");
+    if (heroSection) {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: whatSection,
+                start: "10% bottom",
+                end: "bottom 80%",
+                scrub: true
+            }
+        });
+        tl.to(heroMask, {
+            opacity: 1
+        });
+        tl.to(whatSection, {
+            opacity: 1
+        }, "-=0.05");
+    }
+    let breakPoint = 43.811;
+    let mm = gsap.matchMedia();
+    mm.add({
+        isDesktop: `(min-width: ${breakPoint}em)`,
+        isMobile: `(max-width: ${breakPoint}em)`
+    }, (context => {
+        let {isDesktop, isMobile} = context.conditions;
+        if (isDesktop) ;
+        if (isMobile) if (imgBlocks.length > 0) imgBlocks.forEach((imgBlock => {
+            gsap.to(imgBlock, {
+                opacity: 0,
+                scrollTrigger: {
+                    trigger: imgBlock,
+                    start: "top center",
+                    end: "center center",
+                    scrub: true
+                }
+            });
+        }));
+    }));
+    function smoothScroll(smoothness = .08, inertia = .85) {
+        let scrollPosition = window.pageYOffset;
+        let targetPosition = scrollPosition;
+        let isScrolling = false;
+        let isDraggingScrollbar = false;
+        function updateScroll() {
+            scrollPosition += (targetPosition - scrollPosition) * smoothness;
+            window.scrollTo(0, scrollPosition);
+            if (Math.abs(targetPosition - scrollPosition) > .5) requestAnimationFrame(updateScroll); else isScrolling = false;
+        }
+        function startScroll(event) {
+            if (!isDraggingScrollbar) {
+                targetPosition += event.deltaY * inertia;
+                targetPosition = Math.max(0, Math.min(document.body.scrollHeight - window.innerHeight, targetPosition));
+                event.preventDefault();
+                if (!isScrolling) {
+                    isScrolling = true;
+                    requestAnimationFrame(updateScroll);
+                }
+            }
+        }
+        function onScroll() {
+            if (!isScrolling) {
+                scrollPosition = window.pageYOffset;
+                targetPosition = scrollPosition;
+            }
+        }
+        function onMouseDown() {
+            isDraggingScrollbar = true;
+        }
+        function onMouseUp() {
+            isDraggingScrollbar = false;
+            scrollPosition = window.pageYOffset;
+            targetPosition = scrollPosition;
+        }
+        function initSmoothScroll() {
+            if (document.body.getAttribute("data-smooth-scroll") === "true") {
+                window.addEventListener("wheel", startScroll, {
+                    passive: false
+                });
+                window.addEventListener("scroll", onScroll);
+                window.addEventListener("mousedown", onMouseDown);
+                window.addEventListener("mouseup", onMouseUp);
+            } else {
+                window.removeEventListener("wheel", startScroll);
+                window.removeEventListener("scroll", onScroll);
+                window.removeEventListener("mousedown", onMouseDown);
+                window.removeEventListener("mouseup", onMouseUp);
+            }
+        }
+        const observer = new MutationObserver((mutations => {
+            mutations.forEach((mutation => {
+                if (mutation.attributeName === "data-smooth-scroll") initSmoothScroll();
+            }));
+        }));
+        observer.observe(document.body, {
+            attributes: true
+        });
+        initSmoothScroll();
+    }
+    if (document.body.getAttribute("data-smooth-scroll") === "true") smoothScroll(.08, .85);
+    window.addEventListener("orientationchange", (() => {
+        ScrollTrigger.refresh();
+    }));
+    let lastWindowWidth = window.innerWidth;
+    window.addEventListener("resize", (() => {
+        const currentWindowWidth = window.innerWidth;
+        if (currentWindowWidth !== lastWindowWidth) ScrollTrigger.refresh();
+        lastWindowWidth = currentWindowWidth;
+    }));
     window["FLS"] = false;
-    addTouchClass();
     menuInit();
 })();

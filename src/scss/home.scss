@@ -1,5 +1,11 @@
 .hero {
   position: relative;
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+
   min-height: 100svh;
   display: flex;
   flex-direction: column;
@@ -32,13 +38,38 @@
   }
   // .hero__link
   &__link {
-    // justify-self: center;
     margin-inline: auto;
   }
+  	// .hero__mask
+	&__mask {
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    pointer-events: none;
+    opacity: 0;
+    background-color: #fff;
+	}
+}
+
+
+%zindex {
+  position: relative;
+  // z-index: 5;
+  background-color: #fff;
 }
 
 // === WHAT SECTION =======================
 .what {
+  @extend %zindex;
+  opacity: 0;
+  min-height: 100vh;
+  margin-top: 100svh;
+  // padding-top: toRem(106);
+  // padding-bottom: toRem(106);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   @include adaptiveValue("padding-top", 340, 106,0,3840.98,480.98);
   @include adaptiveValue("padding-bottom", 340, 106,0,3840.98,480.98);
   // .what__container
@@ -64,6 +95,7 @@
 
 // ===  SPACE   SECTION =======================
 .space {
+  @extend %zindex;
   border-top: toRem(1) solid $blue;
   border-bottom: toRem(1) solid $blue;
   @include adaptiveValue("padding-top", 140,70,2,3840.98,1440.98);
@@ -271,6 +303,7 @@
   gap: toRem(11);
 }
 .social {
+  @extend %zindex;
   @include adaptiveValue("padding-top", 130,64,0,3840.98,1440.98);
   @include adaptiveValue("padding-bottom", 130,64,0,3840.98,1440.98);
   // .social__container
@@ -426,6 +459,7 @@
 
 // ===   COMMUNITY  SECTION =======================
 .community {
+  @extend %zindex;
   background-color: $orangBF;
 
   // .community__container
@@ -563,6 +597,14 @@
 }
 
 
-// ===     SECTION =======================
+// ===  SUPPORT   SECTION =======================
+.support {
+  @extend %zindex;
+  // .support__container
+  &__container {
+  }
+}
+
+
 // ===     SECTION =======================
 // ===     SECTION =======================

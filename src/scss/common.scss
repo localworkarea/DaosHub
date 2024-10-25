@@ -20,6 +20,8 @@
 }
 
 
+
+
 .title-hero {
   @include adaptiveValue("font-size", 296, 114,2,3840.98,1440.98);
   @include adaptiveValue("font-size", 114, 42,3,1440.98,375.98);

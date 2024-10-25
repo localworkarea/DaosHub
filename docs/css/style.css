@@ -263,8 +263,6 @@ body {
   justify-content: space-between
 }
 .header__logo {
-  position: relative;
-  z-index: 5;
   display: block
 }
 .header__logo img {
@@ -272,11 +270,15 @@ body {
   height: auto
 }
 .menu__list {
-  display: flex;
-  gap: 1.875rem 3.3125rem
+  display: flex
 }
 .hero {
   position: relative;
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
   min-height: 100svh;
   display: flex;
   flex-direction: column;
@@ -294,6 +296,31 @@ body {
 }
 .hero__link {
   margin-inline: auto
+}
+.hero__mask {
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0;
+  background-color: #fff
+}
+.community,
+.social,
+.space,
+.support,
+.what {
+  position: relative;
+  background-color: #fff
+}
+.what {
+  opacity: 0;
+  min-height: 100vh;
+  margin-top: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center
 }
 .what__container {
   text-align: center
@@ -552,6 +579,7 @@ body {
 }
 @media (min-width:48.06125em) {
   .menu__list {
+    gap: 1.875rem 3.3125rem;
     align-items: center
   }
   .menu__link {
@@ -796,38 +824,33 @@ body {
   .menu__body {
     position: fixed;
     width: 100%;
-    height: 100%;
-    left: -100%;
-    top: 0;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    top: -100%;
+    left: 0;
     overflow: auto;
-    padding: 5rem .9375rem 1.875rem 1.875rem;
-    transition: left .3s;
-    background-color: #000
-  }
-  .menu__body::before {
-    content: "";
-    position: fixed;
-    width: 100%;
-    height: 3.75rem;
-    left: -100%;
-    top: 0;
-    transition: left .3s;
-    z-index: 2;
-    background-color: #000
+    padding: 4.375rem 1.6875rem 3.125rem 2.625rem;
+    transition: top .45s ease;
+    background-color: #fff
   }
   .menu-open .menu__body {
-    left: 0
-  }
-  .menu-open .menu__body::before {
-    left: 0
+    top: 0
   }
   .menu__list {
     flex-direction: column;
     justify-content: center;
     min-height: 100%
   }
+  .menu__item:not(:last-child) .menu__link {
+    border-bottom: .0625rem solid #b7b7b7;
+    padding-bottom: 1.875rem
+  }
   .menu__link {
-    font-size: 2.8125rem
+    display: block;
+    padding-top: 1.875rem;
+    font-size: 1.875rem;
+    color: #000
   }
   .icon-menu {
     display: block;
@@ -853,6 +876,11 @@ body {
     width: 100%;
     height: .125rem;
     background-color: #fff
+  }
+  .menu-open .icon-menu__ic span,
+  .menu-open .icon-menu__ic::after,
+  .menu-open .icon-menu__ic::before {
+    background-color: #000
   }
   .icon-menu__ic::before {
     top: 0
