@@ -81,3 +81,12 @@ h6 {
 	font-weight: inherit;
 	font-size: inherit;
 }
+address {
+	font-style: normal;
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+summary {
+  list-style: none;
+}

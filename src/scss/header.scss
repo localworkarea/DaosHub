@@ -82,7 +82,7 @@
       transition: color .3s ease;
       @media (any-hover: hover){
         &:hover{
-          color: $mainColor;
+          color: #000;
         }
       }
     }

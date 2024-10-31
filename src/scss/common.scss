@@ -20,7 +20,11 @@
 }
 
 
-
+%mbNotChild40-35 {
+  &:not(:last-child) {
+    @include adaptiveValue("margin-bottom", 40,35,0,1440.98,480.98 );
+  }
+}
 
 .title-hero {
   @include adaptiveValue("font-size", 296, 114,2,3840.98,1440.98);
@@ -28,9 +32,11 @@
 }
 
 
-.title-what {
+.title-big {
+  text-align: center;
   @include adaptiveValue("font-size", 130, 65,2,3840.98,1440.98);
-  @include adaptiveValue("font-size", 65, 42,3,1440.98,375.98);
+  @include adaptiveValue("font-size", 65, 35,3,1440.98,375.98);
+  @extend %mbNotChild40-35;
 }
 
 .title-main {
@@ -38,109 +44,97 @@
   @include adaptiveValue("font-size", 45,35,3,1440.98,390.98);
 }
 
+.txt-main {
+  line-height: 1.15;
+  @include adaptiveValue("font-size", 50,25,2,3840.98,1440.98);
+  @include adaptiveValue("font-size", 25,18,3,1440.98,480.98);
+}
+
+
 .btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
   position: relative;
   z-index: 2;
   font-weight: 700;
-  color: #fff;
-  transition: color .3s ease;
-  @include adaptiveValue("font-size", 30, 20,0,1440.98,480.98);
-  &_one,
-  &_two {
-    border: toRem(1.5) solid rgba(255, 255, 255, 0.5);
-    span {
-      display: inline-block;
-      position: relative;
-      z-index: 2;
-    }
-    &::before,
-    &::after {
-      content:"";
-      position: absolute;
-      transition: opacity .3s ease, width .3s ease;
-    }
+  transition: color .3s ease, background-color .3s ease, border-color .3s ease;
+  width: 100%;
+  max-width: fit-content;
+  border: toRem(1.5) solid transparent;
+  backdrop-filter: blur(50px);
+  @include adaptiveValue("min-height", 68,42,0,1440.98,480.98);
+  @include adaptiveValue("border-radius", 34,21,0,1440.98,480.98);
+  @include adaptiveValue("font-size", 30, 18,0,1440.98,480.98);
+  @include adaptiveValue("padding-left", 75,40,0,1440.98,480.98);
+  @include adaptiveValue("padding-right", 75,40,0,1440.98,480.98);
+  span {
+    display: inline-block;
+    position: relative;
+    z-index: 2;
   }
   // .btn_one
   &_one {
-    width: fit-content;
-    white-space: nowrap; 
-    aspect-ratio: 489/93;
-    @include adaptiveValue("border-radius", 10, 5,0,1440.98,480.98);
-    @include adaptiveValue("padding-left", 50, 15,0,1440.98,360.98);
-    @include adaptiveValue("padding-right", 50, 15,0,1440.98,360.98);
-    &:before {
-      z-index: -1;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%,-50%);
-      aspect-ratio: 441/48;
-      width: 90%;
-      background: linear-gradient(90deg, #7ebaf2 0%, #5177ff 100%);
-    }
-    &::after {
-      z-index: 0;
-      inset: 0;
-      box-shadow: 0 0 23px 0 #fff, inset 0 0 25px 0 rgba(255, 255, 255, 0.57);
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(50px);
-      -webkit-backdrop-filter: blur(50px);
-      @include adaptiveValue("border-radius", 10, 5,0,1440.98,480.98);
-    }
+    background-color: #fff;
     @media (any-hover: hover){
       &:hover{
-        &::before {
-          width: 100%;
-        }
+        background-color: rgba(255, 255, 255, 0.2);
+        border-color: #fff;
       }
+    }
+    &:active {
+      color: #fff;
     }
   }
 	// .btn_two
 	&_two {
-    width: fit-content;
-    aspect-ratio: 321/82;
-    @include adaptiveValue("padding-left", 75, 50,0,1440.98,360.98);
-    @include adaptiveValue("padding-right", 75, 50,0,1440.98,360.98);
-    &:before {
-      z-index:0;
-      inset: 0;
-      @extend %btnBefor;
-      background: linear-gradient(180deg, #5177ff 0%, #b3c4ff 100%);
-    }
-    &::after {
-      z-index: 0;
-      inset: 0;
-      @extend %btnBefor;
-      background-color: $blue;
-      opacity: 0;
-    }
+    color: #000;
+    background-color: $brown;
     @media (any-hover: hover){
       &:hover{
-        &::after {
-          opacity: 1;
-        }
+        background-color: rgba(218, 199, 190, 0.2);
+        border-color: $brown;
       }
     }
     &:active {
-      &::after {
-        opacity: 0;
-      }
-      &::before {
-        background: linear-gradient(180deg, #b3c4ff 0%, #fff 100%);
-      }
-      color: $mainColor;
+      background-color: #fff;
     }
 	}
 	// .btn_three
 	&_three {
 	}
+	// .btn_four
+	&_four {
+    border-color: $brown;
+    min-height: toRem(46) !important;
+    padding-left: toRem(45) !important;
+    padding-right: toRem(45) !important;
+    font-size: toRem(20) !important;
+    @media (any-hover: hover){
+      &:hover{
+        background-color: rgba(218, 199, 190, 0.2);
+      }
+    }
+    &:active {
+      color: $brownDard;
+    }
+  }
 }
 
 %btnBefor {
   box-shadow: inset 0 0 26px 4px rgba(255, 255, 255, 0.8), inset 8px 7px 2px 0 rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(50px);
   @include adaptiveValue("border-radius", 15, 10,0,1440.98,480.98);
+}
+
+
+%borderRadius20-10 {
+  @include adaptiveValue("border-radius", 20,10,0,3840.98,1440.98);
+}
+
+%pt100-500 {
+  @include adaptiveValue("padding-top", 100, 50,0,1440.98,480.98);
+}
+%pb100-500 {
+  @include adaptiveValue("padding-bottom", 100, 50,0,1440.98,480.98);
 }

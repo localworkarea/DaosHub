@@ -30,6 +30,9 @@ textarea {
 	&:focus::placeholder {
 		opacity: 0;
 	}
+	&:focus{
+		outline-color: #5177FF;
+	}
 }
 
 textarea.input {
@@ -79,15 +82,22 @@ textarea.input {
 }
 
 %buttonForm {
+	color: #fff;
 	transition: color .3s ease, background-color .3s ease !important;
-	background-color: rgb(81, 119, 255);
+	background-color: $mainColor;
+	max-width: 100% !important;
 	@include adaptiveValue("font-size", 30, 20,0,1920.98,480.98);
 	@include adaptiveValue("min-height", 80, 54,0,1920.98,480.98);
 	@include adaptiveValue("border-radius", 15, 7,0,1920.98,480.98);
 	@media (any-hover: hover){
 		&:hover{
-			background-color: rgb(81, 119, 255,0.5);
+			background-color: #fff;
+			color: #000;
 		}
+	}
+	&:active {
+		background-color: #000;
+			color: #fff;
 	}
 }
 

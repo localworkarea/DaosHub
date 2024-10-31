@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20241031141136">
+	<link rel="stylesheet" href="css/style.min.css?_v=20241101003648">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,10 +22,11 @@
 				<div class="header__menu menu">
 					<nav class="menu__body">
 						<ul class="menu__list">
-							<li class="menu__item"><a href="#" class="menu__link" aria-label="link to the page">community</a></li>
-							<li class="menu__item"><a href="#" class="menu__link" aria-label="link to the page">blog</a></li>
-							<li class="menu__item"><a href="#" class="menu__link" aria-label="link to the page">about us</a></li>
-							<li class="menu__item"><a href="#" class="menu__link" aria-label="link to the page">price</a></li>
+							<li class="menu__item"><a href="#" class="menu__link" data-goto=".space" aria-label="link to the page">workspaces</a></li>
+							<li class="menu__item"><a href="#" class="menu__link" data-goto=".community" aria-label="link to the page">events</a></li>
+							<li class="menu__item"><a href="#" class="menu__link" data-goto=".membership" aria-label="link to the page">community</a></li>
+							<li class="menu__item"><a href="#" class="menu__link" data-goto=".types" aria-label="link to the page">membership</a></li>
+							<li class="menu__item"><a href="#" class="menu__link" data-goto=".location" aria-label="link to the page">location</a></li>
 						</ul>
 					</nav>
 					<button type="button" class="menu__icon icon-menu" aria-label="open a mobile menu"><span class="icon-menu__ic"><span></span></span></button>
@@ -39,7 +40,7 @@
 						Daos Hub Dubai
 					</h1>
 					<p class="hero__subtitle">
-						Share the future
+						phigytal space for web3 builders
 					</p>
 					<a href="#" class="hero__link btn btn_one" aria-label="open form in popup" data-popup="#popupForm">
 						<span>Application for membership</span>
@@ -49,99 +50,53 @@
 			</section>
 			<section class="what">
 				<div class="what__container">
-					<h2 class="what__title title-what">
-						What is Daos?
-					</h2>
-					<p class="what__txt">
-						We represents a new approach to business management based on decentralized and autonomous structures. In Daos, all decisions are made by the community of participants through smart contracts and blockchain technology, ensuring transparency, security, and efficiency in managing resources and processes.
-					</p>
-				</div>
-			</section>
-			<section class="space">
-				<div class="space__container">
-					<div class="space__top">
-						<div class="space__top-lft">
-							<h2 class="space__title title-main">
-								Work spaces
-							</h2>
-							<ul class="space__list">
-								<li class="space__item">
-									Privacy 360 panoramic view
-								</li>
-								<li class="space__item">
-									Highend interior Design
-								</li>
-								<li class="space__item">
-									Extra secure access to premises and i'net
-								</li>
-								<li class="space__item">
-									Executive Offices
-								</li>
-							</ul>
-						</div>
-						<div class="space__spaces spaces">
-							<ul class="spaces__list spaces-mob">
-								<li class="spaces__item">
-									<div class="spaces__body">
-										<div class="spaces__head">
-											<p class="spaces__title">Business suits</p>
-											<p class="spaces__lable">Premium</p>
-										</div>
-										<div class="spaces__image">
-											<img class="ibg" src="img/space/space-01.webp" width="351" height="402" alt="Image">
-										</div>
-									</div>
-								</li>
-								<li class="spaces__item">
-									<div class="spaces__body">
-										<div class="spaces__head">
-											<p class="spaces__title">Business suits</p>
-											<p class="spaces__lable">Standart</p>
-										</div>
-										<div class="spaces__image">
-											<img class="ibg" src="img/space/space-02.webp" width="351" height="402" alt="Image">
-										</div>
-									</div>
-								</li>
-							</ul>
-						</div>
+					<div class="what__do">
+						<h2 class="what__title title-big">
+							What we do?
+						</h2>
+						<p class="what__txt txt-main">
+							We represents a new approach to business management based on decentralized and autonomous structures.
+						</p>
+						<ul class="what__list list-what">
+							<li class="list-what__item">
+								<img src="img/what/phygital.svg" width="109" height="109" alt="Image">
+								<p class="list-what__title">
+									Phygital<br> space
+								</p>
+								<p class="list-what__txt">
+									Ideally located on Sheikh Zayed Road, the
+								</p>
+							</li>
+							<li class="list-what__item">
+								<img src="img/what/infrastructure.svg" width="109" height="109" alt="Image">
+								<p class="list-what__title">
+									Infrastructure for<br> web3 entrepreneurs
+								</p>
+								<p class="list-what__txt">
+									Ideally located on Sheikh Zayed Road, the city's main artery, near the Internet city metro station.
+								</p>
+							</li>
+							<li class="list-what__item">
+								<img src="img/what/rwa.svg" width="109" height="109" alt="Image">
+								<p class="list-what__title">
+									RWA<br> tokenization
+								</p>
+								<p class="list-what__txt">
+									Ideally located on Sheikh Zayed Road, the city's main artery, near
+								</p>
+							</li>
+						</ul>
 					</div>
-					<div class="space__bottom">
-						<div class="space__bottom-lft">
-							<ul class="spaces__list">
-								<li data-da=".spaces-mob,700.98,2" class="spaces__item">
-									<div class="spaces__body">
-										<div class="spaces__head">
-											<p class="spaces__title">Executive offices</p>
-											<p class="spaces__lable">Standart</p>
-										</div>
-										<div class="spaces__image">
-											<img class="ibg" src="img/space/space-03.webp" width="351" height="402" alt="Image">
-										</div>
-									</div>
-								</li>
-								<li data-da=".spaces-mob,700.98,3" class="spaces__item">
-									<div class="spaces__body">
-										<div class="spaces__head">
-											<p class="spaces__title">Private offices</p>
-											<p class="spaces__lable">Standart</p>
-										</div>
-										<div class="spaces__image">
-											<img class="ibg" src="img/space/space-04.webp" width="351" height="402" alt="Image">
-										</div>
-									</div>
-								</li>
-							</ul>
-						</div>
-						<div class="space__details details">
-							<div class="details__body">
-								<p class="details__title">Want the details?</p>
-								<p class="details__txt">Learn more about our best working spaces.</p>
-								<a href="#" class="details__link btn btn_two" aria-label="open form in popup" data-popup="#popupForm">
-									<span>View details</span>
-								</a>
-							</div>
-						</div>
+					<div class="what__membership membership">
+						<h3 class="membership__title title-big">
+							Daos hub membership
+						</h3>
+						<p class="membership__txt txt-main">
+							We represents a new approach to business management based on decentralized and autonomous structures. In Daos, all decisions are made by the community of participants through smart contracts and blockchain technology, ensuring transparency, security, and efficiency in managing resources and processes.
+						</p>
+						<a href="#" class="membership__link btn btn_two" aria-label="open form in popup" data-popup="#popupForm">
+							<span>Apply for membership</span>
+						</a>
 					</div>
 				</div>
 			</section>
@@ -150,6 +105,9 @@
 					<h2 class="social__title title-main">
 						Social spaces
 					</h2>
+					<p class="social__txt">
+						New social spaces in Dubai offices feature modern design and flexibility, fostering team collaboration and reducing stress. These environments, equipped with relaxation zones and advanced technology, enhance creativity, productivity, and job satisfaction.
+					</p>
 					<div class="social__body">
 						<div class="social__top top-scl">
 							<div class="top-scl__clm clm-lft">
@@ -224,19 +182,17 @@
 							</div>
 						</div>
 					</div>
-					<p class="social__txt">
-						New social spaces in Dubai offices feature modern design and flexibility, fostering team collaboration and reducing stress. These environments, equipped with relaxation zones and advanced technology, enhance creativity, productivity, and job satisfaction.
-					</p>
-					<a href="#" class="social__link btn btn_two" aria-label="open form in popup" data-popup="#popupForm">
-						<span>View details</span>
-					</a>
+
 				</div>
 			</section>
 			<section class="community">
 				<div class="community__title-wr">
-					<h2 class="community__title">
-						Daos Hub<br> community events
+					<h2 class="community__title title-big">
+						Bespoke events
 					</h2>
+					<p class="community__txt txt-main">
+						We represents a new approach to business management based on decentralized and autonomous structures. In Daos, all decisions are made by the community of participants through smart contracts and blockchain technology, ensuring transparency, security, and efficiency in managing resources and processes.
+					</p>
 				</div>
 				<div class="community__container">
 					<div class="community__events events">
@@ -340,9 +296,337 @@
 					<div class="community__mask"></div>
 				</div>
 			</section>
+			<section class="space">
+				<div class="space__container">
+					<div class="space__head">
+						<h2 class="space__title title-big">
+							Work spaces
+						</h2>
+						<p class="space__txt txt-main">
+							We represents a new approach to business management based on decentralized and autonomous structures. In Daos, all decisions are
+						</p>
+					</div>
+					<div class="space__top">
+						<div class="space__top-lft">
+							<ul class="space__list">
+								<li class="space__item">
+									Privacy 360 panoramic view
+								</li>
+								<li class="space__item">
+									Highend interior Design
+								</li>
+								<li class="space__item">
+									Extra secure access to premises and i'net
+								</li>
+								<li class="space__item">
+									Executive Offices
+								</li>
+							</ul>
+						</div>
+						<div class="space__spaces spaces">
+							<ul class="spaces__list spaces-mob">
+								<li class="spaces__item">
+									<div class="spaces__body">
+										<div class="spaces__head">
+											<p class="spaces__title">Business suits</p>
+										</div>
+										<div class="spaces__image">
+											<img class="ibg" src="img/space/space-01.webp" width="351" height="402" alt="Image">
+										</div>
+									</div>
+								</li>
+								<li class="spaces__item">
+									<div class="spaces__body">
+										<div class="spaces__head">
+											<p class="spaces__title">Business suits</p>
+										</div>
+										<div class="spaces__image">
+											<img class="ibg" src="img/space/space-02.webp" width="351" height="402" alt="Image">
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="space__bottom">
+						<ul class="spaces__list">
+							<li data-da=".spaces-mob,700.98,last" class="spaces__item">
+								<div class="spaces__body">
+									<div class="spaces__head">
+										<p class="spaces__title">Executive offices</p>
+									</div>
+									<div class="spaces__image">
+										<img class="ibg" src="img/space/space-03.webp" width="351" height="402" alt="Image">
+									</div>
+								</div>
+							</li>
+							<li data-da=".spaces-mob,700.98,last" class="spaces__item">
+								<div class="spaces__body">
+									<div class="spaces__head">
+										<p class="spaces__title">Private offices</p>
+									</div>
+									<div class="spaces__image">
+										<img class="ibg" src="img/space/space-04.webp" width="351" height="402" alt="Image">
+									</div>
+								</div>
+							</li>
+							<li data-da=".spaces-mob,700.98,last" class="spaces__item">
+								<div class="spaces__body">
+									<div class="spaces__head">
+										<p class="spaces__title">Private offices</p>
+									</div>
+									<div class="spaces__image">
+										<img class="ibg" src="img/space/space-04.webp" width="351" height="402" alt="Image">
+									</div>
+								</div>
+							</li>
+							<li data-da=".spaces-mob,700.98,last" class="spaces__item">
+								<div class="spaces__body">
+									<div class="spaces__head">
+										<p class="spaces__title">Private offices</p>
+									</div>
+									<div class="spaces__image">
+										<img class="ibg" src="img/space/space-04.webp" width="351" height="402" alt="Image">
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="space__details details">
+						<div class="details__body">
+							<p class="details__title">Want the details?</p>
+							<p class="details__txt">Learn more about our best working spaces.</p>
+							<a href="#" class="details__link btn btn_two" aria-label="open form in popup" data-popup="#popupForm">
+								<span>View details</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="types">
+				<div class="types__container">
+					<h2 class="types__main-title title-big">
+						Daos hub Membership types
+					</h2>
+					<ul class="types__list">
+						<li class="types__item">
+							<div class="types__head">
+								<p class="types__title">
+									Network<br> card
+								</p>
+							</div>
+							<div class="types__txts">
+								<p>
+									Ideally located on Sheikh Zayed Road, the city's main artery Ideally located on Sheikh Zayed Road, the city's main artery
+								</p>
+							</div>
+							<a href="#" class="types__link  btn btn_four" aria-label="open form in popup" data-popup="#popupForm">
+								<span>Apply now</span>
+							</a>
+						</li>
+						<li class="types__item">
+							<div class="types__head">
+								<p class="types__title">
+									Flex<br> card
+								</p>
+							</div>
+							<div class="types__txts">
+								<p>
+									Ideally located on Sheikh Zayed Road, the city's main artery Ideally located on Sheikh Zayed Road, the city's main artery
+								</p>
+							</div>
+							<a href="#" class="types__link  btn btn_four" aria-label="open form in popup" data-popup="#popupForm">
+								<span>Apply now</span>
+							</a>
+						</li>
+						<li class="types__item">
+							<div class="types__head">
+								<p class="types__title">
+									Workspace<br> card
+								</p>
+							</div>
+							<div class="types__txts">
+								<p>
+									Ideally located on Sheikh Zayed Road, the city's main artery Ideally located on Sheikh Zayed Road, the city's main artery
+								</p>
+							</div>
+							<a href="#" class="types__link btn btn_four" aria-label="open form in popup" data-popup="#popupForm">
+								<span>Apply now</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section class="team">
+				<div class="team__container">
+					<div class="team__body">
+						<h2 class="team__title title-main">
+							Our hub team
+						</h2>
+						<div class="team__txts">
+							<p class="team__txt txt-main">
+								We are building a community of WEB3 ambassadors and innovators, where everyone  has access to relevant networking, high-quality content, and unique events.
+							</p>
+							<p class="team__txt txt-main">
+								We aim to be a guide into the new era of WEB3, where everyone has the opportunity to become a creator of the future
+							</p>
+						</div>
+						<ul class="team__list">
+							<li class="team__item">
+								<img class="ibg" src="img/team/team-01.webp" width="251" height="251" alt="Image">
+								<div class="team__info">
+									<p class="team__name">
+										Kuchinska Alyona
+									</p>
+									<p class="team__position">
+										Head of communications<br> & networking
+									</p>
+								</div>
+							</li>
+							<li class="team__item">
+								<img class="ibg" src="img/team/team-02.webp" width="251" height="251" alt="Image">
+								<div class="team__info">
+									<p class="team__name">
+										Khora Alona
+									</p>
+									<p class="team__position">
+										Head of Hub
+									</p>
+								</div>
+							</li>
+							<li class="team__item">
+								<img class="ibg" src="img/team/team-03.webp" width="251" height="251" alt="Image">
+								<div class="team__info">
+									<p class="team__name">
+										Dmytrovska Anita
+									</p>
+									<p class="team__position">
+										Community Manager
+									</p>
+								</div>
+							</li>
+							<li class="team__item">
+								<img class="ibg" src="img/team/team-04.webp" width="251" height="251" alt="Image">
+								<div class="team__info">
+									<p class="team__name">
+										Suvorova Daria
+									</p>
+									<p class="team__position">
+										Bar Manager
+									</p>
+								</div>
+							</li>
+							<li class="team__item">
+								<img class="ibg" src="img/team/team-05.webp" width="251" height="251" alt="Image">
+								<div class="team__info">
+									<p class="team__name">
+										Kotsyrii Oleksandra
+									</p>
+									<p class="team__position">
+										Event Manager
+									</p>
+								</div>
+							</li>
+							<li class="team__item">
+								<img class="ibg" src="img/team/team-06.webp" width="251" height="251" alt="Image">
+								<div class="team__info">
+									<p class="team__name">
+										Spliukhina Yelyzaveta
+									</p>
+									<p class="team__position">
+										Community Manager
+									</p>
+								</div>
+							</li>
+							<li class="team__item">
+								<img class="ibg" src="img/team/team-07.webp" width="251" height="251" alt="Image">
+								<div class="team__info">
+									<p class="team__name">
+										Veremchuk Tetiana
+									</p>
+									<p class="team__position">
+										Community Manager
+									</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section class="location">
+				<div class="location__container">
+					<h2 class="location__title title-big">
+						Location
+					</h2>
+					<ul class="location__images">
+						<li class="location__item">
+							<img class="ibg" src="img/location/buildings.webp" width="616" height="534" alt="Image">
+						</li>
+						<li class="location__item">
+							<img class="ibg" src="img/location/locaction.webp" width="905" height="534" alt="Image">
+						</li>
+					</ul>
+					<div class="location__txt">
+						<p class="txt-main">
+							Ideally located on Sheikh Zayed Road, the city's main artery, near the Internet city metro station.
+						</p>
+						<p class="txt-main">
+							Its proximity to Palm Jumeirah and other areas ensures you can reach any destination in the city within 15-20 minutes. This prominent city building features multiple dining options, medical center and other leisure facilities. Surrounded by high-rated hotels and convention centers, it offers both onsite and street parking
+						</p>
+					</div>
+				</div>
+			</section>
 		</main>
 		<footer class="footer">
 			<div class="footer__container">
+				<div class="footer__blocks">
+					<div class="footer__left">
+						<img class="footer__logo" src="img/icons/daos_logo_black-2.svg" width="202" height="31" alt="Image">
+						<div data-da=".footer__contact,700.98,last" class="footer__other">
+							<a href="#" class="footer__link" aria-label="link to Privacy page">
+								Privacy policy
+							</a>
+							<p>
+								© Copyright 2024
+							</p>
+						</div>
+					</div>
+					<div class="footer__social social-footer">
+						<ul class="social-footer__list">
+							<li class="social-footer__item">
+								<a href="#" class="social-footer__link" aria-label="link to the Telegram">
+									<img src="img/icons/Telegram.svg" width="62" height="62" alt="icon Telegram">
+								</a>
+							</li>
+							<li class="social-footer__item">
+								<a href="#" class="social-footer__link" aria-label="link to the LinkedIn">
+									<img src="img/icons/LinkedIn.svg" width="62" height="62" alt="icon LinkedIn">
+								</a>
+							</li>
+							<li class="social-footer__item">
+								<a href="#" class="social-footer__link" aria-label="link to the Instagram">
+									<img src="img/icons/Instagram.svg" width="62" height="62" alt="icon Instagram">
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="footer__contact contact-footer">
+						<address>
+							<p class="contact-footer__title">
+								Contact Us
+							</p>
+							<a href="mailto:info@daoshub.xyz" class="contact-footer__link" aria-label="link to mailto">
+								info@daoshub.xyz
+							</a>
+							<a href="tel:+971589000951" class="contact-footer__link" aria-label="link to phone number">
+								+9 715 8900 0951
+							</a>
+							<a href="https://maps.app.goo.gl/1w7vbmbMGXi2p1ag9" class="contact-footer__link" aria-label="link to maps">
+								51st & 52nd floor, Business Central Tower, Tower – B,<br><br> Al Sufouh, Dubai, UAE
+							</a>
+						</address>
+					</div>
+				</div>
 			</div>
 		</footer>
 	</div>
@@ -358,10 +642,18 @@
 				</button>
 				<div class="popup__body">
 					<p class="popup__title">Fill the form</p>
-					<form class="form" data-ajax action="#" method="POST">
+					<p class="popup__sub-title">
+						New social spaces in Dubai offices feature modern design and flexibility, fostering team collaboration and reducing stress.
+					</p>
+
+					<form class="form" data-dev action="#" method="POST">
 						<div class="form__item">
 							<label for="name">Your name</label>
 							<input id="name" type="text" name="name" placeholder="Type here..." class="input" required>
+						</div>
+						<div class="form__item">
+							<label for="userEmail">E-mail</label>
+							<input id="userEmail" type="email" name="userEmail" placeholder="example mail@mail.com" class="input" required>
 						</div>
 						<div class="form__item">
 							<label for="userName">Telegram username</label>
@@ -392,7 +684,7 @@
 							<label for="comment">Commentary</label>
 							<textarea id="comment" class="form__textarea input" name="comment" placeholder="Type here..."></textarea>
 						</div>
-						<button type="submit" class="form__button btn btn_three" aria-label="submit form button">Confirm</button>
+						<button type="submit" class="form__button btn" aria-label="submit form button">Confirm</button>
 					</form>
 				</div>
 				<div class="popup__send sent-modal">
@@ -405,9 +697,9 @@
 			</div>
 		</div>
 	</div>
-	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js?_v=20241031141136"></script>
-	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js?_v=20241031141136"></script>
-	<script src="js/app.min.js?_v=20241031141136"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js?_v=20241101003648"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js?_v=20241101003648"></script>
+	<script src="js/app.min.js?_v=20241101003648"></script>
 </body>
 
 </html>

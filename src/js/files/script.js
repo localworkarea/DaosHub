@@ -10,12 +10,15 @@ const heroMask = document.querySelector('.hero__mask');
 const whatSection = document.querySelector('.what');
 const imgBlocks = document.querySelectorAll('.img-block__mask');
 
+const communityTxt = document.querySelector('.community__txt');
+const communityContainer = document.querySelector('.community__container');
+
 if (heroSection) {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: whatSection,
-      start: "10% bottom",
-      end: "bottom 80%",
+      start: "top bottom",
+      end: "center bottom",
       scrub: true,
       // markers: true,
     }
@@ -29,6 +32,17 @@ if (heroSection) {
 
 }
 
+if (communityContainer) {
+  gsap.to(communityTxt, {
+    opacity: 0,
+    scrollTrigger: {
+      trigger: communityContainer,
+      start: "top bottom",
+      end: "top top",
+      scrub: true,
+    }
+  });
+}
 
 
 let breakPoint = 43.811; // 700.98px

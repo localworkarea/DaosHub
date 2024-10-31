@@ -71,11 +71,8 @@ body::after {
 		width: 100%;
 		max-width: toRem(750);
 		position: relative;
+		background-color: $grayDD;
 		@extend %borderRadius20-10;
-		backdrop-filter: blur(23px);
-		-webkit-backdrop-filter: blur(23px);
-		box-shadow: 2px 2px 5px 0 rgba(81, 119, 255, 0.2), inset 0 0 12px 4px rgba(255, 255, 255, 0.8), inset 4px 3px 1px 0 rgba(255, 255, 255, 0.15);
-		background-color: #b2c3ff;
 		@include adaptiveValue("padding", 40, 20,0,1920.98,480.98);
 		.lock & {
 			visibility: visible;
@@ -97,8 +94,8 @@ body::after {
 		display: grid;
 		place-items: center;
 		transition: background-color .3s ease;
-		@include adaptiveValue("top", 40, 30,0,1920.98,480.98);
-		@include adaptiveValue("right", 40, 30,0,1920.98,480.98);
+		@include adaptiveValue("top", 40, 20,0,1920.98,480.98);
+		@include adaptiveValue("right", 40, 20,0,1920.98,480.98);
 		@include adaptiveValue("width", 40, 30,0,1920.98,480.98);
 		@media (any-hover: hover){
 			&:hover{
@@ -124,7 +121,13 @@ body::after {
 	// .popup__title
 	&__title {
 		@include adaptiveValue("font-size", 55, 28,0,1920.98,480.98);
-		@include adaptiveValue("margin-bottom", 20, 10,0,1920.98,480.98);
+		@include adaptiveValue("margin-bottom", 18, 8,0,1920.98,480.98);
+	}
+	// .popup__sub-title
+	&__sub-title {
+		line-height: 1.15;
+		@include adaptiveValue("font-size", 25, 18,0,1440.98,480.98);
+		@include adaptiveValue("margin-bottom", 18, 8,0,1920.98,480.98);
 	}
 	// .popup__send
 	&__send {

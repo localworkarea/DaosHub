@@ -10,10 +10,18 @@
 			</button>
 			<div class="popup__body">
 				<p class="popup__title">Fill the form</p>
-				<form class="form" data-ajax action="#" method="POST">
+				<p class="popup__sub-title">
+					New social spaces in Dubai offices feature modern design and flexibility, fostering team collaboration and reducing stress. 	
+				</p>
+
+				<form class="form" data-dev action="#" method="POST">
 					<div class="form__item">
 						<label for="name">Your name</label>
 						<input id="name" type="text" name="name" placeholder="Type here..." class="input" required>
+					</div>
+					<div class="form__item">
+						<label for="userEmail">E-mail</label>
+						<input id="userEmail" type="email" name="userEmail" placeholder="example mail@mail.com" class="input" required>
 					</div>
 					<div class="form__item">
 						<label for="userName">Telegram username</label>
@@ -44,7 +52,7 @@
 						<label for="comment">Commentary</label>
 						<textarea id="comment" class="form__textarea input" name="comment" placeholder="Type here..."></textarea>
 					</div>
-					<button type="submit" class="form__button btn btn_three" aria-label="submit form button">Confirm</button>
+					<button type="submit" class="form__button btn" aria-label="submit form button">Confirm</button>
 				</form>
 			</div>
 			<div class="popup__send sent-modal">
