@@ -626,9 +626,9 @@ body::after {
   inset: 0;
   display: grid;
   place-items: center;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  background: rgba(0,0,0,.3);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  background: rgba(0,0,0,.2);
   transition: opacity .3s ease
 }
 .img-block__mask p {
@@ -642,7 +642,7 @@ body::after {
   position: absolute;
   z-index: -1;
   inset: 0;
-  background-color: rgba(0,0,0,.3)
+  background-color: rgba(0,0,0,.2)
 }
 .img-block__mask:hover {
   opacity: 0
