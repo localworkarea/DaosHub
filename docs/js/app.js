@@ -690,7 +690,7 @@
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: whatSection,
-                start: "top bottom",
+                start: "10% bottom",
                 end: "center bottom",
                 scrub: true
             }
