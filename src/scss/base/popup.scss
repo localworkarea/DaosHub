@@ -1,3 +1,8 @@
+
+// LOCAL CODE ====================
+
+// адаптировано под открытие ютюб в попапе и в целом код будет работать корректно
+
 body::after {
 	content: "";
 	background-color: rgba(0, 0, 0, 0.5);
@@ -14,48 +19,155 @@ body::after {
 .popup-show body::after {
 	opacity: 1;
 }
+
+.popup_show {
+	z-index: 150;
+	pointer-events: auto !important;
+}
+.popup_show .popup__content {
+	// opacity: 1;
+	transform: translate(0,0%);
+}
+
 .popup {
 	position: fixed;
+	z-index: 150;
 	top: 0;
 	left: 0;
 	bottom: 0;
 	right: 0;
-	padding: 30px 10px;
-	transition: visibility 0.8s ease 0s;
-	visibility: hidden;
-	pointer-events: none;
-}
-.popup_show {
-	z-index: 150;
-	visibility: visible;
+	padding: toRem(30) toRem(10);
+	transition: visibility 0.8s ease 0s, opacity .3s ease;
 	overflow: auto;
-	pointer-events: auto;
+	pointer-events: none;
+	opacity: 0;
+
+	&.popup_show {
+		opacity: 1;
+	}
+	&.popup-msg {
+		padding: 0;
+	}
+	
+	// .popup__wrapper
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		min-height: 100%;
+		flex: 1 1 auto;
+		width: 100%;
+		
+		.popup-msg & {
+			padding: 20px;
+		}
+	}
+	// .popup__content
+	&__content {
+		// opacity: 0;
+		transform: translate(0,10%);
+		transition: opacity 0.3s ease 0s, transform .65s ease;
+		width: 100%;
+		max-width: toRem(750);
+		position: relative;
+		@extend %borderRadius20-10;
+		backdrop-filter: blur(23px);
+		-webkit-backdrop-filter: blur(23px);
+		box-shadow: 2px 2px 5px 0 rgba(81, 119, 255, 0.2), inset 0 0 12px 4px rgba(255, 255, 255, 0.8), inset 4px 3px 1px 0 rgba(255, 255, 255, 0.15);
+		background-color: #b2c3ff;
+		@include adaptiveValue("padding", 40, 20,0,1920.98,480.98);
+		.lock & {
+			visibility: visible;
+		}
+		// .popup-msg & {
+		// 	max-width: toRem(600);
+		// 	aspect-ratio:16/9;
+		// 	border-radius: toRem(30);
+		// }
+	}
+	// .popup__close
+	&__close {
+		position: absolute;
+		z-index: 10;
+		aspect-ratio: 1/1;
+		outline: none;
+		border-radius: toRem(5);
+		padding: toRem(5);
+		display: grid;
+		place-items: center;
+		transition: background-color .3s ease;
+		@include adaptiveValue("top", 40, 30,0,1920.98,480.98);
+		@include adaptiveValue("right", 40, 30,0,1920.98,480.98);
+		@include adaptiveValue("width", 40, 30,0,1920.98,480.98);
+		@media (any-hover: hover){
+			&:hover{
+				background-color: rgba(255, 255, 255, 0.2);
+			}
+		}
+		svg {
+			width: 100%;
+			height: auto;
+			path {
+				stroke: $mainColor;
+			}
+		}
+	}
+	// .popup__body
+	&__body {
+		transition: opacity .3s ease;
+		._form-sent & {
+			opacity: 0;
+			pointer-events: none;
+		}
+	}
+	// .popup__title
+	&__title {
+		@include adaptiveValue("font-size", 55, 28,0,1920.98,480.98);
+		@include adaptiveValue("margin-bottom", 20, 10,0,1920.98,480.98);
+	}
+	// .popup__send
+	&__send {
+	}
 }
-.popup_show .popup__content {
-	visibility: visible;
-	transform: scale(1);
-}
-.popup__wrapper {
+
+
+
+
+.sent-modal {
+	position: absolute;
+	inset: 0;
+	z-index: 2;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	min-height: 100%;
-	flex: 1 1 auto;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.popup__content {
-	visibility: hidden;
-	transform: scale(0);
-	transition: transform 0.3s ease 0s;
-	background-color: #eee;
-	padding: 20px;
-	width: 100%;
-	max-width: 900px;
-	border-radius: 20px;
-	.lock & {
-		visibility: visible;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity .3s ease;
+	@include adaptiveValue("padding", 40, 20,0,1920.98,480.98);
+	._form-sent & {
+		opacity: 1;
+		pointer-events: all;
+	}
+	// .sent-modal__head
+	&__head {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+		line-height: 1.15;
+	}
+	// .sent-modal__titlet
+	&__titlet {
+		@include adaptiveValue("font-size", 55, 28,0,1920.98,480.98);
+		@include adaptiveValue("margin-bottom", 25, 12,0,1920.98,480.98);
+	}
+	// .sent-modal__sub-titlet
+	&__sub-titlet {
+		@include adaptiveValue("font-size", 35, 18,0,1920.98,480.98);
+	}
+	// .sent-modal__btn
+	&__btn {
+		@extend %buttonForm;
 	}
 }

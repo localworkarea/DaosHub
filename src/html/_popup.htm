@@ -1,14 +1,58 @@
-<div id="popup" aria-hidden="true" class="popup">
+<div id="popupForm" aria-hidden="true" class="popup">
 	<div class="popup__wrapper">
 		<div class="popup__content">
-			<button data-close type="button" class="popup__close">
-				<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-					<path opacity="0.850056" d="M1.73333 1.48883L21.5469 21.0288" stroke="#979797" stroke-linecap="square" />
-					<path opacity="0.850056" d="M21.2667 1.48883L1.45309 21.0288" stroke="#979797" stroke-linecap="square" />
-				</svg>
+			<button data-close type="button" class="popup__close" aria-label="close popup">
+				<svg width="43" height="43" viewBox="0 0 43 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M40.7576 42.1213L0.757586 2.12132L2.87891 0L42.8789 40L40.7576 42.1213Z" fill="black"/>
+					<path fill-rule="evenodd" clip-rule="evenodd" d="M0.87868 40L40.8787 1.75834e-05L43 2.12134L3 42.1213L0.87868 40Z" fill="black"/>
+					</svg>
+					
 			</button>
-			<div class="popup__text">
-				Popup content
+			<div class="popup__body">
+				<p class="popup__title">Fill the form</p>
+				<form class="form" data-ajax action="#" method="POST">
+					<div class="form__item">
+						<label for="name">Your name</label>
+						<input id="name" type="text" name="name" placeholder="Type here..." class="input" required>
+					</div>
+					<div class="form__item">
+						<label for="userName">Telegram username</label>
+						<input id="userName" type="text" name="userName" placeholder="example @nickname" class="input" required>
+					</div>
+					<div class="form__item">
+						<label for="companyName">Your company name</label>
+						<input id="companyName" type="text" name="companyName" placeholder="Type here..." class="input" required>
+					</div>
+					<div class="form__item">
+						<label for="interested">You are interested in...</label>
+						<div class="item-select">
+							<select id="interested" name="interested" class="form__select input">
+								<option value="none" selected>-Select-</option>
+								<option value="individual">Individual workplace</option>
+								<option value="participation">Participation in the community</option>
+								<option value="office">Office for a team/company</option>
+							</select>
+							<div class="item-select__icon">
+								<svg width="35" height="20" viewBox="0 0 35 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M15.9081 17.1669L32.8787 0.196307L35 2.31763L18.0294 19.2882L15.9081 17.1669Z" fill="black"/>
+									<path d="M19.7169 17.1669L2.74632 0.196307L0.625 2.31763L17.5956 19.2882L19.7169 17.1669Z" fill="black"/>
+									</svg>
+							</div>
+						</div>
+					</div>
+					<div class="form__item">
+						<label for="comment">Commentary</label>
+						<textarea id="comment" class="form__textarea input" name="comment" placeholder="Type here..."></textarea>
+					</div>
+					<button type="submit" class="form__button btn btn_three" aria-label="submit form button">Confirm</button>
+				</form>
+			</div>
+			<div class="popup__send sent-modal">
+				<div class="sent-modal__head">
+					<p class="sent-modal__titlet">Successfully! </p>
+					<p class="sent-modal__sub-titlet">Our manager will contact you<br> within a week.</p>
+				</div>
+				<button data-close type="button" class="sent-modal__btn btn btn_three" aria-label="close popup">Confirm</button>
 			</div>
 		</div>
 	</div>

@@ -15,7 +15,7 @@
 						<p class="hero__subtitle">
 							Share the future
 						</p>
-						<a href="#" class="hero__link btn btn_one" aria-label="link to the page">
+						<a href="#" class="hero__link btn btn_one" aria-label="open form in popup" data-popup="#popupForm">
 							<span>Application for membership</span>
 						</a>
 					</div>
@@ -111,7 +111,7 @@
 								<div class="details__body">
 									<p class="details__title">Want the details?</p>
 									<p class="details__txt">Learn more about our best working spaces.</p>
-									<a href="#" class="details__link btn btn_two" aria-label="link to details">
+									<a href="#" class="details__link btn btn_two" aria-label="open form in popup" data-popup="#popupForm">
 										<span>View details</span>
 									</a>
 								</div>
@@ -201,7 +201,7 @@
 						<p class="social__txt">
 							New social spaces in Dubai offices feature modern design and flexibility, fostering team collaboration and reducing stress. These environments, equipped with relaxation zones and advanced technology, enhance creativity, productivity, and job satisfaction.
 						</p>
-						<a href="#" class="social__link btn btn_two" aria-label="link to details">
+						<a href="#" class="social__link btn btn_two" aria-label="open form in popup" data-popup="#popupForm">
 							<span>View details</span>
 						</a>
 					</div>
@@ -317,6 +317,7 @@
 			</main>
 			@@include('html/_footer.htm',{})
 		</div>
+		@@include('html/_popup.htm',{})
 		<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 		@@include('html/_js.htm',{})

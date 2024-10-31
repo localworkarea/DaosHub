@@ -1,20 +1,113 @@
-//<FORM>
-// Сніппет (HTML):
-.form {
-	&__row {
+//<INPUT>
+// Сніппет (HTML): inp
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.input {
+	width: 100%;
+	display: block;
+	padding: 0px 20px;
+	caret-color: inherit;
+	background-color: #fff;
+	@include adaptiveValue("font-size", 24, 18,0,1920.98,480.98);
+	@include adaptiveValue("border-radius", 15, 7,0,1920.98,480.98);
+	@include adaptiveValue("min-height", 51, 43,0,1920.98,480.98);
+	&._form-focus {
 	}
-	&__column {
-	}
-	&__line {
-	}
-	&__input {
-	}
-	&__button {
-	}
-	&__error {
+	&._form-error {
 	}
 }
-//</FORM>
+.input[placeholder]:not([data-placeholder-nohiden]) {
+	&::placeholder {
+		transition: opacity 0.3s;
+		color: $gray51;
+	}
+	&:focus::placeholder {
+		opacity: 0;
+	}
+}
+
+textarea.input {
+	resize: none;
+	padding: 20px;
+}
+
+.form {
+	&._sending {
+		.form__button {
+			opacity: 0.2;
+			pointer-events: none;
+		}
+	}
+	// .form__item
+	&__item {
+		label {
+			@include adaptiveValue("font-size", 26, 18,0,1920.98,480.98);
+			@include adaptiveValue("margin-bottom", 13, 8,0,1920.98,480.98);
+		}
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 20, 13,0,1920.98,480.98);
+		}
+	
+	}
+	// .form__select
+	&__select {
+		appearance: none;
+		-moz-appearance: none; 
+		-webkit-appearance: none;
+		option {
+			&:nth-child(1) {
+				color: $gray51;
+			}
+				&:hover{
+				}
+		}
+	}
+	// .form__textarea
+	&__textarea {
+		@include adaptiveValue("min-height", 150, 70,0,1920.98,480.98);
+	}
+	// .form__button
+	&__button {
+		@extend %buttonForm;
+	}
+}
+
+%buttonForm {
+	transition: color .3s ease, background-color .3s ease !important;
+	background-color: rgb(81, 119, 255);
+	@include adaptiveValue("font-size", 30, 20,0,1920.98,480.98);
+	@include adaptiveValue("min-height", 80, 54,0,1920.98,480.98);
+	@include adaptiveValue("border-radius", 15, 7,0,1920.98,480.98);
+	@media (any-hover: hover){
+		&:hover{
+			background-color: rgb(81, 119, 255,0.5);
+		}
+	}
+}
+
+.item-select {
+	position: relative;
+	// .item-select__icon
+	&__icon {
+		position: absolute;
+		top: 50%;
+		right: toRem(25);
+		transform: translate(0,-50%);
+		pointer-events: none;
+		@include adaptiveValue("right", 30, 15,0,1920.98,480.98);
+		@include adaptiveValue("width", 26,16,0,1920.98,480.98);
+		svg {
+			width: 100%;
+			height: auto;
+		}
+	}
+}
 
 // <BUTTONS>
 // Сніппет (HTML): btn

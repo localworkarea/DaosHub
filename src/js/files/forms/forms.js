@@ -233,6 +233,10 @@ export function formSubmit() {
 				popup ? flsModules.popup.open(popup) : null;
 			}
 		}, 0);
+		const popupContent = document.querySelector('.popup__content');
+		if (popupContent) {
+			popupContent.classList.add('_form-sent');
+		}
 		// Очищуємо форму
 		formValidate.formClean(form);
 		// Повідомляємо до консолі

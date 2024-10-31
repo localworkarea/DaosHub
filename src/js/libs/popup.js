@@ -34,8 +34,8 @@ class Popup {
 			closeEsc: true, // Закриття ESC
 			bodyLock: true, // Блокування скролла
 			hashSettings: {
-				location: true, // Хеш в адресному рядку
-				goHash: true, // Перехід по наявності в адресному рядку
+				location: false, // Хеш в адресному рядку
+				goHash: false, // Перехід по наявності в адресному рядку
 			},
 			on: { // Події
 				beforeOpen: function () { },
@@ -189,22 +189,22 @@ class Popup {
 
 			if (this.targetOpen.element) {
 				// YouTube
-				if (this.youTubeCode) {
-					const codeVideo = this.youTubeCode;
-					const urlVideo = `https://www.youtube.com/embed/${codeVideo}?rel=0&showinfo=0&autoplay=1`
-					const iframe = document.createElement('iframe');
-					iframe.setAttribute('allowfullscreen', '');
+				// if (this.youTubeCode) {
+				// 	const codeVideo = this.youTubeCode;
+				// 	const urlVideo = `https://www.youtube.com/embed/${codeVideo}?rel=0&showinfo=0&autoplay=1`
+				// 	const iframe = document.createElement('iframe');
+				// 	iframe.setAttribute('allowfullscreen', '');
 
-					const autoplay = this.options.setAutoplayYoutube ? 'autoplay;' : '';
-					iframe.setAttribute('allow', `${autoplay}; encrypted-media`);
+				// 	const autoplay = this.options.setAutoplayYoutube ? 'autoplay;' : '';
+				// 	iframe.setAttribute('allow', `${autoplay}; encrypted-media`);
 
-					iframe.setAttribute('src', urlVideo);
+				// 	iframe.setAttribute('src', urlVideo);
 
-					if (!this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`)) {
-						const youtubePlace = this.targetOpen.element.querySelector('.popup__text').setAttribute(`${this.options.youtubePlaceAttribute}`, '');
-					}
-					this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`).appendChild(iframe);
-				}
+				// 	if (!this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`)) {
+				// 		const youtubePlace = this.targetOpen.element.querySelector('.popup__text').setAttribute(`${this.options.youtubePlaceAttribute}`, '');
+				// 	}
+				// 	this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`).appendChild(iframe);
+				// }
 				if (this.options.hashSettings.location) {
 					// Отримання хешу та його виставлення
 					this._getHash();
@@ -220,6 +220,7 @@ class Popup {
 					}
 				}));
 
+		
 				this.targetOpen.element.classList.add(this.options.classes.popupActive);
 				document.documentElement.classList.add(this.options.classes.bodyActive);
 
@@ -250,6 +251,13 @@ class Popup {
 						popup: this
 					}
 				}));
+			
+				const popupContent = document.querySelector('.popup__content');
+				if (popupContent.classList.contains('_form-sent')) {
+				    popupContent.classList.remove('_form-sent');
+				}
+
+
 				this.popupLogging(`Відкрив попап`);
 
 			} else this.popupLogging(`Йой, такого попапу немає. Перевірте коректність введення. `);
@@ -272,10 +280,10 @@ class Popup {
 		}));
 
 		// YouTube
-		if (this.youTubeCode) {
-			if (this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`))
-				this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`).innerHTML = '';
-		}
+		// if (this.youTubeCode) {
+		// 	if (this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`))
+		// 		this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`).innerHTML = '';
+		// }
 		this.previousOpen.element.classList.remove(this.options.classes.popupActive);
 		// aria-hidden
 		this.previousOpen.element.setAttribute('aria-hidden', 'true');
@@ -303,6 +311,13 @@ class Popup {
 		setTimeout(() => {
 			this._focusTrap();
 		}, 50);
+
+		const popupContent = document.querySelector('.popup__content');
+		if (popupContent.classList.contains('_form-sent')) {
+			setTimeout(() => {
+		    popupContent.classList.remove('_form-sent');
+			}, 500);
+		}
 
 		this.popupLogging(`Закрив попап`);
 	}
