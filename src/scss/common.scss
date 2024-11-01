@@ -2,7 +2,7 @@
   width: 100%;
   padding-inline: toRem(20);
   margin-inline: auto;
-  @include adaptiveValue("max-width", 3600, 1380,0,3840.98,1440.98);
+  @include adaptiveValue("max-width", 1580, 1380,0,1920.98,1440.98);
 }
 
 
@@ -27,27 +27,23 @@
 }
 
 .title-hero {
-  @include adaptiveValue("font-size", 296, 114,2,3840.98,1440.98);
-  @include adaptiveValue("font-size", 114, 42,3,1440.98,375.98);
+  @include adaptiveValue("font-size", 114, 42,0,1440.98,375.98);
 }
 
 
 .title-big {
   text-align: center;
-  @include adaptiveValue("font-size", 130, 65,2,3840.98,1440.98);
-  @include adaptiveValue("font-size", 65, 35,3,1440.98,375.98);
+  @include adaptiveValue("font-size", 65, 35,0,1440.98,375.98);
   @extend %mbNotChild40-35;
 }
 
 .title-main {
-  @include adaptiveValue("font-size", 90,45,2,3840.98,1440.98);
-  @include adaptiveValue("font-size", 45,35,3,1440.98,390.98);
+  @include adaptiveValue("font-size", 45,35,0,1440.98,390.98);
 }
 
 .txt-main {
   line-height: 1.15;
-  @include adaptiveValue("font-size", 50,25,2,3840.98,1440.98);
-  @include adaptiveValue("font-size", 25,18,3,1440.98,480.98);
+  @include adaptiveValue("font-size", 25,18,0,1440.98,480.98);
 }
 
 
@@ -129,7 +125,7 @@
 
 
 %borderRadius20-10 {
-  @include adaptiveValue("border-radius", 20,10,0,3840.98,1440.98);
+  @include adaptiveValue("border-radius", 15,10,0,1920.98,1440.98);
 }
 
 %pt100-500 {

@@ -36,7 +36,7 @@
 .menu {
   // .menu__body
   &__body {
-    @media (max-width: $mobile) {
+    @media (max-width: $tablet) {
 			position: fixed;
 			width: 100%;
 			height: fit-content;
@@ -54,11 +54,11 @@
   // .menu__list
   &__list {
     display: flex;
-    @media (min-width:$mobile){
+    @media (min-width:$tablet){
       gap: toRem(30) toRem(53); 
        align-items: center;
     }
-    @media (max-width:$mobile){
+    @media (max-width:$tablet){
        flex-direction: column;
        justify-content: center; 
        min-height: 100%;
@@ -66,7 +66,7 @@
   }
   // .menu__item
   &__item {
-    @media (max-width:$mobile){
+    @media (max-width:$tablet){
       &:not(:last-child) {
         .menu__link {
           border-bottom: toRem(1) solid #B7B7B7;
@@ -77,7 +77,7 @@
   }
   // .menu__link
   &__link {
-    @media (min-width:$mobile){
+    @media (min-width:$tablet){
       font-size: toRem(20);
       transition: color .3s ease;
       @media (any-hover: hover){
@@ -86,7 +86,7 @@
         }
       }
     }
-    @media (max-width:$mobile){
+    @media (max-width:$tablet){
       display: block;
       padding-top: toRem(30);
        font-size: toRem(30); 
@@ -99,10 +99,10 @@
 }
 
 .icon-menu {
-  @media (min-width:$mobile){
+  @media (min-width:$tablet){
      display: none; 
   }
-  @media (max-width:$mobile){
+  @media (max-width:$tablet){
      display: block; 
      width: toRem(40);
      height: toRem(40);
@@ -111,10 +111,10 @@
   }
   // .icon-menu__ic
   &__ic {
-    @media (min-width:$mobile){
+    @media (min-width:$tablet){
       display: none;
     }
-    @media (max-width: $mobile) {
+    @media (max-width: $tablet) {
       display: block;
       position: relative;
       width: toRem(30);

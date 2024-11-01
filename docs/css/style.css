@@ -550,7 +550,8 @@ body::after {
 }
 .list-what {
   gap: 2.1875rem;
-  margin-inline: auto
+  margin-inline: auto;
+  max-width: 73.125rem
 }
 .list-what__item {
   display: flex;
@@ -559,6 +560,9 @@ body::after {
 .list-what__item img {
   width: auto;
   height: 6.25rem
+}
+.list-what__title {
+  font-size: 1.75rem
 }
 .list-what__txt {
   flex: 1
@@ -635,7 +639,8 @@ body::after {
   transition: -webkit-transform .3s ease;
   transition: transform .3s ease;
   transition: transform .3s ease,-webkit-transform .3s ease;
-  color: #fff
+  color: #fff;
+  font-size: 1.875rem
 }
 .img-block__mask::before {
   content: "";
@@ -699,6 +704,12 @@ body::after {
 .space__txt {
   text-align: center
 }
+.space__top {
+  margin-bottom: 2.1875rem;
+  -webkit-column-gap: 1.5625rem;
+  -moz-column-gap: 1.5625rem;
+  column-gap: 1.5625rem
+}
 .space__item {
   position: relative
 }
@@ -713,6 +724,11 @@ body::after {
   background-position: center;
   background-size: contain
 }
+.spaces__list {
+  -webkit-column-gap: 1.5625rem;
+  -moz-column-gap: 1.5625rem;
+  column-gap: 1.5625rem
+}
 .spaces__body {
   display: flex;
   flex-direction: column;
@@ -721,7 +737,11 @@ body::after {
 .spaces__head {
   flex: 1;
   padding-bottom: 1.1875rem;
-  border-bottom: .0625rem solid #dac9be
+  border-bottom: .0625rem solid #dac9be;
+  margin-bottom: 1.5rem
+}
+.spaces__title {
+  font-size: 1.875rem
 }
 .spaces__image {
   overflow: hidden
@@ -835,6 +855,9 @@ body::after {
 .team__name {
   font-weight: 700
 }
+.team__name:not(:last-child) {
+  margin-bottom: .25rem
+}
 .team__position {
   line-height: 1.1
 }
@@ -920,10 +943,10 @@ body::after {
     margin-bottom: .625rem
   }
   .social__top {
-    grid-template-columns: 1fr 27% 1fr
+    grid-template-columns: 1fr 25% 1fr
   }
   .social__btm {
-    grid-template-columns: 1fr 42% 1fr
+    grid-template-columns: 1fr 38% 1fr
   }
   .community__mask {
     min-height: 130svh
@@ -955,6 +978,25 @@ body::after {
   }
 }
 @media (min-width:48.06125em) {
+  .what__txt {
+    max-width: 78%;
+    margin-inline: auto
+  }
+  .membership__txt {
+    max-width: 79%;
+    margin-inline: auto
+  }
+  .social__txt {
+    max-width: 77%;
+    margin-inline: auto
+  }
+}
+@media (min-width:54.43625em) {
+  .types__list {
+    grid-template-columns: repeat(3,1fr)
+  }
+}
+@media (min-width:62.06125em) {
   .menu__list {
     gap: 1.875rem 3.3125rem;
     align-items: center
@@ -969,30 +1011,6 @@ body::after {
   .icon-menu__ic {
     display: none
   }
-  .what__txt {
-    max-width: 58%;
-    margin-inline: auto
-  }
-  .membership__txt {
-    max-width: 79%;
-    margin-inline: auto
-  }
-  .social__txt {
-    max-width: 77%;
-    margin-inline: auto
-  }
-}
-@media (min-width:48.06125em)and (any-hover:hover) {
-  .menu__link:hover {
-    color: #000
-  }
-}
-@media (min-width:54.43625em) {
-  .types__list {
-    grid-template-columns: repeat(3,1fr)
-  }
-}
-@media (min-width:62.06125em) {
   .list-what {
     display: flex;
     justify-content: space-between
@@ -1010,6 +1028,11 @@ body::after {
     max-width: 20%
   }
 }
+@media (min-width:62.06125em)and (any-hover:hover) {
+  .menu__link:hover {
+    color: #000
+  }
+}
 @media (min-width:90.06125em) {
   .popup__sub-title {
     font-size: 1.5625rem
@@ -1017,6 +1040,18 @@ body::after {
   .title-big:not(:last-child),
   .what__txt:not(:last-child) {
     margin-bottom: 2.5rem
+  }
+  .title-hero {
+    font-size: 7.125rem
+  }
+  .title-big {
+    font-size: 4.0625rem
+  }
+  .title-main {
+    font-size: 2.8125rem
+  }
+  .txt-main {
+    font-size: 1.5625rem
   }
   .btn {
     min-height: 4.25rem
@@ -1070,10 +1105,16 @@ body::after {
     font-size: 1.75rem
   }
   .hero__title {
-    margin-bottom: 3.125rem
+    margin-bottom: 2.5rem
+  }
+  .hero__subtitle {
+    font-size: 2.8125rem
   }
   .list-what__item {
     gap: 1.5625rem
+  }
+  .list-what__txt {
+    font-size: 1.25rem
   }
   .social {
     padding-bottom: 4.75rem
@@ -1081,8 +1122,39 @@ body::after {
   .social__title {
     margin-bottom: 2.25rem
   }
-  .space__title {
-    margin-bottom: 3.125rem
+  .social__txt {
+    font-size: 1.5625rem
+  }
+  .txt-block__item p {
+    font-size: 1.25rem
+  }
+  .events__body {
+    border-radius: 1.5625rem
+  }
+  .events__body {
+    padding: 2rem
+  }
+  .events__img {
+    margin-bottom: 1.5625rem
+  }
+  .events__title {
+    font-size: 2.5rem
+  }
+  .events__dscr,
+  .events__title {
+    padding-top: 1.25rem
+  }
+  .events__title {
+    padding-bottom: 1.25rem
+  }
+  .space__item:not(:last-child) {
+    margin-bottom: 1.5625rem
+  }
+  .details__title {
+    font-size: 2.5rem
+  }
+  .details__txt {
+    font-size: 1.5625rem
   }
   .details__txt {
     margin-bottom: 2.1875rem
@@ -1105,8 +1177,11 @@ body::after {
   .team__info {
     padding: 1.1875rem
   }
-  .team__name:not(:last-child) {
-    margin-bottom: .625rem
+  .team__name {
+    font-size: 1.1875rem
+  }
+  .team__position {
+    font-size: .9375rem
   }
   .location__item {
     border-radius: 1.5625rem
@@ -1185,142 +1260,35 @@ body::after {
   .sent-modal__sub-titlet {
     font-size: 2.1875rem
   }
-}
-@media (min-width:217.56125em) {
-  .details__link {
-    min-width: 40rem
-  }
-}
-@media (min-width:240.06125em) {
   [class*=__container] {
-    max-width: 225rem
-  }
-  .title-hero {
-    font-size: 18.5rem
-  }
-  .title-big {
-    font-size: 8.125rem
-  }
-  .title-main {
-    font-size: 5.625rem
-  }
-  .txt-main {
-    font-size: 3.125rem
+    max-width: 98.75rem
   }
   .events__img img,
   .img-block,
   .popup__content,
   .spaces__image,
   .txt-block__item {
-    border-radius: 1.25rem
-  }
-  .hero__subtitle {
-    font-size: 5.625rem
-  }
-  .list-what {
-    max-width: 143.75rem
-  }
-  .list-what__title {
-    font-size: 3rem
-  }
-  .list-what__txt {
-    font-size: 2.5rem
-  }
-  .social__txt {
-    font-size: 3.125rem
-  }
-  .events__body {
-    border-radius: 3.125rem
-  }
-  .events__body {
-    padding: 4.25rem
-  }
-  .events__img {
-    margin-bottom: 3.125rem
-  }
-  .events__title {
-    font-size: 5rem
+    border-radius: .9375rem
   }
   .events__dscr {
-    font-size: 3.75rem
-  }
-  .events__dscr,
-  .events__title {
-    padding-top: 2.875rem
-  }
-  .events__title {
-    padding-bottom: 2.875rem
-  }
-  .space__top {
-    margin-bottom: 3.125rem
-  }
-  .space__top {
-    -webkit-column-gap: 3.125rem;
-    -moz-column-gap: 3.125rem;
-    column-gap: 3.125rem
-  }
-  .space__item {
-    font-size: 3.75rem
-  }
-  .space__item {
-    padding-left: 6.25rem
-  }
-  .space__item:not(:last-child) {
-    margin-bottom: 3.125rem
-  }
-  .space__item:before {
-    width: 3.125rem
-  }
-  .spaces__list {
-    -webkit-column-gap: 3.125rem;
-    -moz-column-gap: 3.125rem;
-    column-gap: 3.125rem
-  }
-  .spaces__head {
-    margin-bottom: 3rem
-  }
-  .spaces__title {
-    font-size: 3.75rem
-  }
-  .details__title {
-    font-size: 5rem
-  }
-  .details__txt {
-    font-size: 3.125rem
-  }
-  .types__title {
-    font-size: 8.125rem
-  }
-  .team__body {
-    border-radius: 3.125rem
-  }
-  .team__name {
-    font-size: 2.8125rem
-  }
-  .team__position {
-    font-size: 2.1875rem
-  }
-}
-@media (min-width:240.055625em) {
-  .txt-block__item p {
-    font-size: 2.5rem
-  }
-  .img-block__mask p {
-    font-size: 3.75rem
-  }
-}
-@media (max-width:120.06125em) {
-  .list-what {
-    max-width: 73.125rem
-  }
-  .list-what__title {
     font-size: 1.75rem
   }
-  .list-what__txt {
-    font-size: 1.25rem
-  }
-  .spaces__title {
+  .space__item {
     font-size: 1.875rem
+  }
+  .space__item {
+    padding-left: 3.75rem
+  }
+  .space__item:before {
+    width: 1.75rem
+  }
+  .types__title {
+    font-size: 4.0625rem
+  }
+}
+@media (min-width:240.06125em) {
+  .team__body {
+    border-radius: 3.125rem
   }
 }
 @media (max-width:90.06125em) {
@@ -1334,35 +1302,8 @@ body::after {
   .txt-block__item {
     border-radius: .625rem
   }
-  .txt-block__item p {
-    font-size: 1.25rem
-  }
-  .img-block__mask p {
-    font-size: 1.875rem
-  }
-  .space__top {
-    margin-bottom: 2.1875rem
-  }
-  .space__top {
-    -webkit-column-gap: 1.5625rem;
-    -moz-column-gap: 1.5625rem;
-    column-gap: 1.5625rem
-  }
-  .spaces__list {
-    -webkit-column-gap: 1.5625rem;
-    -moz-column-gap: 1.5625rem;
-    column-gap: 1.5625rem
-  }
-  .spaces__head {
-    margin-bottom: 1.5rem
-  }
 }
 @media (max-width:62.06125em) {
-  .list-what {
-    display: grid
-  }
-}
-@media (max-width:48.06125em) {
   .menu__body {
     position: fixed;
     width: 100%;
@@ -1446,8 +1387,11 @@ body::after {
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg)
   }
+  .list-what {
+    display: grid
+  }
 }
-@media (max-width:48.06125em)and (any-hover:none) {
+@media (max-width:62.06125em)and (any-hover:none) {
   .icon-menu__ic {
     cursor: default
   }
@@ -1663,6 +1607,9 @@ body::after {
   .list-what__item {
     gap: 1.25rem
   }
+  .list-what__txt {
+    font-size: 1.125rem
+  }
   .social {
     padding-bottom: 1.5625rem
   }
@@ -1670,6 +1617,9 @@ body::after {
     margin-bottom: 2.0625rem
   }
   .social__txt {
+    font-size: 1.125rem
+  }
+  .txt-block__item p {
     font-size: 1.125rem
   }
   .community__title-wr {
@@ -1687,10 +1637,7 @@ body::after {
     border-radius: .625rem
   }
   .events__body {
-    padding: 1.5rem
-  }
-  .space__title {
-    margin-bottom: 2.5rem
+    padding: 1.375rem
   }
   .space__item {
     padding-left: 1.9375rem
@@ -1734,9 +1681,6 @@ body::after {
   }
   .team__name {
     font-size: .8125rem
-  }
-  .team__name:not(:last-child) {
-    margin-bottom: .25rem
   }
   .team__position {
     font-size: .625rem
@@ -1870,6 +1814,12 @@ body::after {
   .sent-modal__sub-titlet {
     font-size: clamp(1.125rem ,.7701102431rem + 1.1805555556vw ,2.1875rem)
   }
+  .space__item {
+    padding-left: clamp(1.9375rem ,1.3320998264rem + 2.0138888889vw ,3.75rem)
+  }
+  .space__item:before {
+    width: clamp(.8125rem ,.4993619792rem + 1.0416666667vw ,1.75rem)
+  }
 }
 @media (min-width:30.06125em)and (max-width:90.06125em) {
   .popup__sub-title {
@@ -1939,6 +1889,9 @@ body::after {
   .list-what__item {
     gap: clamp(1.25rem ,1.0934309896rem + .5208333333vw ,1.5625rem)
   }
+  .list-what__txt {
+    font-size: clamp(1.125rem ,1.0623723958rem + .2083333333vw ,1.25rem)
+  }
   .social {
     padding-bottom: clamp(1.5625rem ,-.0345039063rem + 5.3125vw ,4.75rem)
   }
@@ -1948,14 +1901,14 @@ body::after {
   .social__txt {
     font-size: clamp(1.125rem ,.9058033854rem + .7291666667vw ,1.5625rem)
   }
-  .events__body {
-    border-radius: clamp(.625rem ,.3118619792rem + 1.0416666667vw ,1.25rem)
+  .txt-block__item p {
+    font-size: clamp(1.125rem ,1.0623723958rem + .2083333333vw ,1.25rem)
   }
   .events__body {
-    padding: clamp(1.5rem ,1.1868619792rem + 1.0416666667vw ,2.125rem)
+    border-radius: clamp(.625rem ,.1552929687rem + 1.5625vw ,1.5625rem)
   }
-  .space__title {
-    margin-bottom: clamp(2.5rem ,2.1868619792rem + 1.0416666667vw ,3.125rem)
+  .events__body {
+    padding: clamp(1.375rem ,1.0618619792rem + 1.0416666667vw ,2rem)
   }
   .space__item:not(:last-child) {
     margin-bottom: clamp(1.125rem ,.9058033854rem + .7291666667vw ,1.5625rem)
@@ -1984,9 +1937,6 @@ body::after {
   .team__name {
     font-size: clamp(.8125rem ,.6246171875rem + .625vw ,1.1875rem)
   }
-  .team__name:not(:last-child) {
-    margin-bottom: clamp(.25rem ,.0621171875rem + .625vw ,.625rem)
-  }
   .team__position {
     font-size: clamp(.625rem ,.4684309896rem + .5208333333vw ,.9375rem)
   }
@@ -1994,84 +1944,16 @@ body::after {
     border-radius: clamp(1.25rem ,1.0934309896rem + .5208333333vw ,1.5625rem)
   }
 }
-@media (min-width:90.06125em)and (max-width:240.06125em) {
+@media (min-width:90.06125em)and (max-width:120.06125em) {
   [class*=__container] {
-    max-width: clamp(86.25rem ,2.94334375rem + 92.5vw ,225rem)
-  }
-  .title-hero {
-    font-size: clamp(7.125rem ,.2953552083rem + 7.5833333333vw ,18.5rem)
-  }
-  .title-big {
-    font-size: clamp(4.0625rem ,1.6233411458rem + 2.7083333333vw ,8.125rem)
-  }
-  .title-main {
-    font-size: clamp(2.8125rem ,1.1238515625rem + 1.875vw ,5.625rem)
-  }
-  .txt-main {
-    font-size: clamp(1.5625rem ,.6243619792rem + 1.0416666667vw ,3.125rem)
+    max-width: clamp(86.25rem ,48.7244791667rem + 41.6666666667vw ,98.75rem)
   }
   .events__img img,
   .img-block,
   .popup__content,
   .spaces__image,
   .txt-block__item {
-    border-radius: clamp(.625rem ,.2497447917rem + .4166666667vw ,1.25rem)
-  }
-  .hero__subtitle {
-    font-size: clamp(2.8125rem ,1.1238515625rem + 1.875vw ,5.625rem)
-  }
-  .social__txt {
-    font-size: clamp(1.5625rem ,.6243619792rem + 1.0416666667vw ,3.125rem)
-  }
-  .events__body {
-    border-radius: clamp(1.25rem ,.124234375rem + 1.25vw ,3.125rem)
-  }
-  .events__body {
-    padding: clamp(2.125rem ,.8491322917rem + 1.4166666667vw ,4.25rem)
-  }
-  .events__img {
-    margin-bottom: clamp(1.5625rem ,.6243619792rem + 1.0416666667vw ,3.125rem)
-  }
-  .events__title {
-    font-size: clamp(2.5rem ,.9989791667rem + 1.6666666667vw ,5rem)
-  }
-  .events__dscr,
-  .events__title {
-    padding-top: clamp(1.4375rem ,.5744130208rem + .9583333333vw ,2.875rem)
-  }
-  .events__title {
-    padding-bottom: clamp(1.4375rem ,.5744130208rem + .9583333333vw ,2.875rem)
-  }
-  .space__top {
-    margin-bottom: clamp(2.1875rem ,1.6246171875rem + .625vw ,3.125rem)
-  }
-  .space__top {
-    -webkit-column-gap: clamp(1.5625rem ,.6243619792rem + 1.0416666667vw ,3.125rem);
-    -moz-column-gap: clamp(1.5625rem ,.6243619792rem + 1.0416666667vw ,3.125rem);
-    column-gap: clamp(1.5625rem ,.6243619792rem + 1.0416666667vw ,3.125rem)
-  }
-  .space__item:not(:last-child) {
-    margin-bottom: clamp(1.5625rem ,.6243619792rem + 1.0416666667vw ,3.125rem)
-  }
-  .spaces__list {
-    -webkit-column-gap: clamp(1.5625rem ,.6243619792rem + 1.0416666667vw ,3.125rem);
-    -moz-column-gap: clamp(1.5625rem ,.6243619792rem + 1.0416666667vw ,3.125rem);
-    column-gap: clamp(1.5625rem ,.6243619792rem + 1.0416666667vw ,3.125rem)
-  }
-  .spaces__head {
-    margin-bottom: clamp(1.5rem ,.5993875rem + 1vw ,3rem)
-  }
-  .details__title {
-    font-size: clamp(2.5rem ,.9989791667rem + 1.6666666667vw ,5rem)
-  }
-  .details__txt {
-    font-size: clamp(1.5625rem ,.6243619792rem + 1.0416666667vw ,3.125rem)
-  }
-  .team__name {
-    font-size: clamp(1.1875rem ,.2118364583rem + 1.0833333333vw ,2.8125rem)
-  }
-  .team__position {
-    font-size: clamp(.9375rem ,.1869895833rem + .8333333333vw ,2.1875rem)
+    border-radius: clamp(.625rem ,-.3131380208rem + 1.0416666667vw ,.9375rem)
   }
 }
 @media (min-width:23.49875em)and (max-width:90.06125em) {
@@ -2087,7 +1969,7 @@ body::after {
     font-size: clamp(2.1875rem ,1.9547738095rem + .9523809524vw ,2.8125rem)
   }
   .hero__title {
-    margin-bottom: clamp(1.25rem ,.5518214286rem + 2.8571428571vw ,3.125rem)
+    margin-bottom: clamp(1.25rem ,.784547619rem + 1.9047619048vw ,2.5rem)
   }
   .events__img {
     margin-bottom: clamp(1.0625rem ,.8763190476rem + .7619047619vw ,1.5625rem)
@@ -2097,39 +1979,16 @@ body::after {
   }
   .events__dscr,
   .events__title {
-    padding-top: clamp(.9375rem ,.7513190476rem + .7619047619vw ,1.4375rem)
+    padding-top: clamp(.9375rem ,.8211369048rem + .4761904762vw ,1.25rem)
   }
   .events__title {
-    padding-bottom: clamp(.9375rem ,.7513190476rem + .7619047619vw ,1.4375rem)
+    padding-bottom: clamp(.9375rem ,.8211369048rem + .4761904762vw ,1.25rem)
   }
   .details__title {
     font-size: clamp(1.875rem ,1.6422738095rem + .9523809524vw ,2.5rem)
   }
   .details__txt {
     font-size: clamp(1.125rem ,.9620916667rem + .6666666667vw ,1.5625rem)
-  }
-}
-@media (min-width:120.06125em)and (max-width:240.06125em) {
-  .list-what {
-    max-width: clamp(73.125rem ,2.4639518229rem + 58.8541666667vw ,143.75rem)
-  }
-  .list-what__title {
-    font-size: clamp(1.75rem ,.4993619792rem + 1.0416666667vw ,3rem)
-  }
-  .list-what__txt {
-    font-size: clamp(1.25rem ,-.0006380208rem + 1.0416666667vw ,2.5rem)
-  }
-  .events__dscr {
-    font-size: clamp(1.75rem ,-.2510208333rem + 1.6666666667vw ,3.75rem)
-  }
-  .space__item {
-    font-size: clamp(1.875rem ,-.0009570313rem + 1.5625vw ,3.75rem)
-  }
-  .spaces__title {
-    font-size: clamp(1.875rem ,-.0009570313rem + 1.5625vw ,3.75rem)
-  }
-  .types__title {
-    font-size: clamp(3.4375rem ,-1.2523925781rem + 3.90625vw ,8.125rem)
   }
 }
 @media (max-width:62.06125em)and (min-width:51.31125em) {
@@ -2140,14 +1999,6 @@ body::after {
 @media (max-width:51.31125em)and (min-width:37.56125em) {
   .list-what {
     grid-template-columns: repeat(2,1fr)
-  }
-}
-@media (min-width:90.06125em)and (max-width:240.055625em) {
-  .txt-block__item p {
-    font-size: clamp(1.25rem ,.4994614381rem + .8333645845vw ,2.5rem)
-  }
-  .img-block__mask p {
-    font-size: clamp(1.875rem ,.7491921572rem + 1.2500468768vw ,3.75rem)
   }
 }
 @media (max-width:68.81125em)and (min-width:43.81125em) {
@@ -2166,22 +2017,6 @@ body::after {
     font-size: clamp(1.0625rem ,.854871732rem + .8496732026vw ,1.875rem)
   }
 }
-@media (min-width:30.06125em)and (max-width:240.06125em) {
-  .space__item {
-    padding-left: clamp(1.9375rem ,1.3201707589rem + 2.0535714286vw ,6.25rem)
-  }
-  .space__item:before {
-    width: clamp(.8125rem ,.481468378rem + 1.1011904762vw ,3.125rem)
-  }
-  .team__body {
-    border-radius: clamp(1.25rem ,.9815959821rem + .8928571429vw ,3.125rem)
-  }
-}
-@media (min-width:90.06125em)and (max-width:217.56125em) {
-  .details__link {
-    min-width: clamp(20rem ,5.872745098rem + 15.6862745098vw ,40rem)
-  }
-}
 @media (max-width:54.43625em)and (min-width:37.56125em) {
   .types__list {
     grid-template-columns: repeat(2,1fr)
@@ -2189,7 +2024,12 @@ body::after {
 }
 @media (min-width:23.49875em)and (max-width:120.06125em) {
   .types__title {
-    font-size: clamp(2.1875rem ,1.8833090615rem + 1.2944983819vw ,3.4375rem)
+    font-size: clamp(2.1875rem ,1.7312135922rem + 1.9417475728vw ,4.0625rem)
+  }
+}
+@media (min-width:30.06125em)and (max-width:240.06125em) {
+  .team__body {
+    border-radius: clamp(1.25rem ,.9815959821rem + .8928571429vw ,3.125rem)
   }
 }
 @media (max-width:62.06125em)and (min-width:37.56125em) {
