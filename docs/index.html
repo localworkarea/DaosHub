@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20241101022455">
+	<link rel="stylesheet" href="css/style.min.css?_v=20241101121555">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -203,11 +203,11 @@
 										<img class="ibg" loading="lazy" src="img/community/community-01.webp" width="500" height="526" alt="Image">
 									</div>
 									<h3 class="events__title">
-										Group Activities
+										Fundraising
 									</h3>
 									<div class="events__dscr">
 										<p>
-											Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor libero veritatis aliquid laudantium cupiditate tempore quisquam quos repellat
+											Participate in Pitch Deck Sessions, Demo Days, Startup Competitions, and Investor Roundtables designed to help founders attract the right investors, refine their pitch, and unlock business growth opportunities.
 										</p>
 									</div>
 								</div>
@@ -577,6 +577,12 @@
 				</div>
 			</section>
 		</main>
+		<a href="#" data-goto=".header" class="to-top" aria-label="button scroll to top">
+			<svg width="27" height="15" viewBox="0 0 27 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M11.8832 1.91329L24.652 14.682L26.248 13.0859L13.4793 0.317192L11.8832 1.91329Z" fill="#434343" />
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M15.1168 1.91524L2.34805 14.684L0.751953 13.0879L13.5207 0.319147L15.1168 1.91524Z" fill="#434343" />
+			</svg>
+		</a>
 		<footer class="footer">
 			<div class="footer__container">
 				<div class="footer__blocks">
@@ -653,21 +659,21 @@
 						</div>
 						<div class="form__item">
 							<label for="userEmail">E-mail</label>
-							<input id="userEmail" type="email" name="userEmail" placeholder="example mail@mail.com" class="input" required>
+							<input id="userEmail" type="email" name="userEmail" placeholder="example mail@mail.com" class="input" data-required="email" data-validate>
 						</div>
 						<div class="form__item">
 							<label for="userName">Telegram username</label>
-							<input id="userName" type="text" name="userName" placeholder="example @nickname" class="input" required>
+							<input id="userName" type="text" name="userName" placeholder="example @nickname" class="input">
 						</div>
 						<div class="form__item">
 							<label for="companyName">Your company name</label>
-							<input id="companyName" type="text" name="companyName" placeholder="Type here..." class="input" required>
+							<input id="companyName" type="text" name="companyName" placeholder="Type here..." class="input">
 						</div>
 						<div class="form__item">
 							<label for="interested">You are interested in...</label>
 							<div class="item-select">
-								<select id="interested" name="interested" class="form__select input">
-									<option value="none" selected>-Select-</option>
+								<select id="interested" name="interested" class="form__select input" required>
+									<option value="" disabled selected>-Select-</option>
 									<option value="individual">Individual workplace</option>
 									<option value="participation">Participation in the community</option>
 									<option value="office">Office for a team/company</option>
@@ -697,9 +703,9 @@
 			</div>
 		</div>
 	</div>
-	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js?_v=20241101022455"></script>
-	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js?_v=20241101022455"></script>
-	<script src="js/app.min.js?_v=20241101022455"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js?_v=20241101121555"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js?_v=20241101121555"></script>
+	<script src="js/app.min.js?_v=20241101121555"></script>
 </body>
 
 </html>

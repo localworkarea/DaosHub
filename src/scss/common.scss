@@ -2,7 +2,7 @@
   width: 100%;
   padding-inline: toRem(20);
   margin-inline: auto;
-  @include adaptiveValue("max-width", 1580, 1380,0,1920.98,1440.98);
+  @include adaptiveValue("max-width", 1580, 1180,0,1920.98,1440.98);
 }
 
 
@@ -27,23 +27,23 @@
 }
 
 .title-hero {
-  @include adaptiveValue("font-size", 114, 42,0,1440.98,375.98);
+  @include adaptiveValue("font-size", 114, 42,0,1920.98,375.98);
 }
 
 
 .title-big {
   text-align: center;
-  @include adaptiveValue("font-size", 65, 35,0,1440.98,375.98);
+  @include adaptiveValue("font-size", 65, 35,0,1920.98,375.98);
   @extend %mbNotChild40-35;
 }
 
 .title-main {
-  @include adaptiveValue("font-size", 45,35,0,1440.98,390.98);
+  @include adaptiveValue("font-size", 45,35,0,1920.98,390.98);
 }
 
 .txt-main {
   line-height: 1.15;
-  @include adaptiveValue("font-size", 25,18,0,1440.98,480.98);
+  @include adaptiveValue("font-size", 25,18,0,1920.98,480.98);
 }
 
 
@@ -59,11 +59,11 @@
   max-width: fit-content;
   border: toRem(1.5) solid transparent;
   backdrop-filter: blur(50px);
-  @include adaptiveValue("min-height", 68,42,0,1440.98,480.98);
-  @include adaptiveValue("border-radius", 34,21,0,1440.98,480.98);
-  @include adaptiveValue("font-size", 30, 18,0,1440.98,480.98);
-  @include adaptiveValue("padding-left", 75,40,0,1440.98,480.98);
-  @include adaptiveValue("padding-right", 75,40,0,1440.98,480.98);
+  @include adaptiveValue("min-height", 68,42,0,1920.98,480.98);
+  @include adaptiveValue("border-radius", 34,21,0,1920.98,480.98);
+  @include adaptiveValue("font-size", 30, 18,0,1920.98,480.98);
+  @include adaptiveValue("padding-left", 70,40,0,1920.98,480.98);
+  @include adaptiveValue("padding-right", 70,40,0,1920.98,480.98);
   span {
     display: inline-block;
     position: relative;
@@ -133,4 +133,32 @@
 }
 %pb100-500 {
   @include adaptiveValue("padding-bottom", 100, 50,0,1440.98,480.98);
+}
+
+.to-top {
+  @media (min-width:$mobileSmall){
+     display: none; 
+  }
+  @media (max-width:$mobileSmall){
+      position: fixed;
+      bottom: toRem(20);
+      right: toRem(20);
+      z-index: 20;
+      width: toRem(55);
+      height: toRem(55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: #fff;
+      border: toRem(1) solid $mainColor;
+      box-shadow: 5px 4px 14px 0 rgba(0, 0, 0, 0.25);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s ease;
+      &._show {
+        opacity: 1;
+        pointer-events: all;
+      }
+  }
 }

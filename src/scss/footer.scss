@@ -73,7 +73,7 @@
   &__list {
     display: flex;
     align-items: center;
-    @include adaptiveValue("gap", 43,33,0,1440.98,480.98);
+    @include adaptiveValue("gap", 43,33,0,1920.98,480.98);
   }
   // .social-footer__item
   &__item {
@@ -82,7 +82,7 @@
   &__link {
     display: block;
     aspect-ratio: 1/1;
-    @include adaptiveValue("width", 62,53,0,1440.98,480.98);
+    @include adaptiveValue("width", 62,53,0,1920.98,480.98);
     img {
       width: 100%;
       height: auto;
@@ -105,13 +105,13 @@
   // .contact-footer__title
   &__title {
     font-size: toRem(35);
-    @include adaptiveValue("margin-bottom", 33, 20,0,1440.98,480.98);
+    @include adaptiveValue("margin-bottom", 33, 20,0,1920.98,480.98);
   }
   // .contact-footer__link
   &__link {
     display: block;
     transition: color .3s ease;
-    @include adaptiveValue("font-size", 28, 20,0,1440.98,480.98);
+    @include adaptiveValue("font-size", 22, 20,0,1920.98,480.98);
     &:not(:last-child) {
       @media (min-width:toEm(700.98)){
         margin-bottom: toRem(10);

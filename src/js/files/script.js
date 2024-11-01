@@ -29,7 +29,15 @@ if (heroSection) {
   tl.to(whatSection, {
     opacity: 1,
   }, "-=0.05");
-
+    // Добавляем класс _hidden к элементу .to-top после второго шага
+    tl.add(() => {
+      document.querySelector('.to-top').classList.add('_show');
+    });
+  
+    // Удаляем класс _hidden до конца триггера
+    tl.add(() => {
+      document.querySelector('.to-top').classList.remove('_show');
+    }, "-=0.3");
 }
 
 if (communityContainer) {

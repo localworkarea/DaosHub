@@ -701,6 +701,12 @@
         tl.to(whatSection, {
             opacity: 1
         }, "-=0.05");
+        tl.add((() => {
+            document.querySelector(".to-top").classList.add("_show");
+        }));
+        tl.add((() => {
+            document.querySelector(".to-top").classList.remove("_show");
+        }), "-=0.3");
     }
     if (communityContainer) gsap.to(communityTxt, {
         opacity: 0,

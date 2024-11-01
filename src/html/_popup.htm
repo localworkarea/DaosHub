@@ -21,21 +21,21 @@
 					</div>
 					<div class="form__item">
 						<label for="userEmail">E-mail</label>
-						<input id="userEmail" type="email" name="userEmail" placeholder="example mail@mail.com" class="input" required>
+						<input id="userEmail" type="email" name="userEmail" placeholder="example mail@mail.com" class="input" data-required="email" data-validate>
 					</div>
 					<div class="form__item">
 						<label for="userName">Telegram username</label>
-						<input id="userName" type="text" name="userName" placeholder="example @nickname" class="input" required>
+						<input id="userName" type="text" name="userName" placeholder="example @nickname" class="input">
 					</div>
 					<div class="form__item">
 						<label for="companyName">Your company name</label>
-						<input id="companyName" type="text" name="companyName" placeholder="Type here..." class="input" required>
+						<input id="companyName" type="text" name="companyName" placeholder="Type here..." class="input">
 					</div>
 					<div class="form__item">
 						<label for="interested">You are interested in...</label>
 						<div class="item-select">
-							<select id="interested" name="interested" class="form__select input">
-								<option value="none" selected>-Select-</option>
+							<select id="interested" name="interested" class="form__select input" required>
+								<option value="" disabled selected>-Select-</option>
 								<option value="individual">Individual workplace</option>
 								<option value="participation">Participation in the community</option>
 								<option value="office">Office for a team/company</option>

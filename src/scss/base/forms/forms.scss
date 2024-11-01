@@ -14,12 +14,18 @@ textarea {
 	padding: 0px 20px;
 	caret-color: inherit;
 	background-color: #fff;
+	outline: toRem(2) solid transparent;
 	@include adaptiveValue("font-size", 24, 18,0,1920.98,480.98);
 	@include adaptiveValue("border-radius", 15, 7,0,1920.98,480.98);
 	@include adaptiveValue("min-height", 51, 43,0,1920.98,480.98);
 	&._form-focus {
 	}
 	&._form-error {
+		outline-color: #CD0000;
+		color: #CD0000;
+		&::placeholder {
+			color: #CD0000 !important;
+		}
 	}
 }
 .input[placeholder]:not([data-placeholder-nohiden]) {
