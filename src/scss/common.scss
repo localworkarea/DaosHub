@@ -32,6 +32,7 @@
 
 
 .title-big {
+  color: #1f1101;
   text-align: center;
   @include adaptiveValue("font-size", 65, 35,0,1920.98,375.98);
   @extend %mbNotChild40-35;
@@ -46,6 +47,18 @@
   @include adaptiveValue("font-size", 25,18,0,1920.98,480.98);
 }
 
+.txt-28 {
+  line-height: 1.15;
+  @include adaptiveValue("font-size", 28,18,0,1920.98,480.98);
+}
+.txt-40 {
+  line-height: 1.15;
+  @include adaptiveValue("font-size", 40,28,0,1920.98,480.98);
+}
+
+.mb-120 {
+  @include adaptiveValue("margin-bottom", 120, 70,0,1920.98,480.98);
+}
 
 .btn {
   display: flex;
@@ -117,6 +130,8 @@
   }
 }
 
+
+
 %btnBefor {
   box-shadow: inset 0 0 26px 4px rgba(255, 255, 255, 0.8), inset 8px 7px 2px 0 rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(50px);
@@ -126,6 +141,12 @@
 
 %borderRadius20-10 {
   @include adaptiveValue("border-radius", 15,10,0,1920.98,1440.98);
+}
+%borderRadius24-20 {
+  @include adaptiveValue("border-radius", 24,20,0,1920.98,480.98);
+}
+%borderRadius24-10 {
+  @include adaptiveValue("border-radius", 24,10,0,1920.98,480.98);
 }
 
 %pt100-500 {
@@ -161,4 +182,18 @@
         pointer-events: all;
       }
   }
+}
+
+
+// Other programmer styles =============
+.text-dark {
+  color: #1F1101
+}
+
+.text-brown {
+  color: #1E0C01CC;
+}
+
+.text-lightbrown {
+  color: #9E5A1F;
 }

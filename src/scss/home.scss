@@ -55,13 +55,10 @@
 	}
 }
 
-
 %zindex {
   position: relative;
   background-color: #fff;
 }
-
-
 
 // === WHAT SECTION =======================
 .what {
@@ -164,7 +161,6 @@
     margin-inline: auto;
   }
 }
-
 
 // ===  SOCIAL   SECTION =======================
 %socialGrid {
@@ -313,6 +309,260 @@
           transform: scale(1.1);
         }
       }
+  }
+}
+
+
+.block-a {
+  @extend %zindex;
+  background: linear-gradient(180deg, #dac9be 0%, #efe2d7 100%);
+  @extend %pt100-500;
+  @extend %pb100-500;
+}
+
+// === OPPORTUNITIES SECTION ============================
+.opportunities {
+  // .opportunities__container
+  &__container {
+  }
+  // .opportunities__title
+  &__title {
+    text-align: center;
+  }
+	// .opportunities__body
+	&__body {
+    
+  }
+	// .opportunities__list
+	&__list {
+    display: grid;
+    gap: toRem(45) toRem(30); 
+    @media (min-width:toEm(700.98)){
+      grid-template-columns: repeat(2,1fr);
+    }
+	}
+	// .opportunities__item
+	&__item {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    @extend %borderRadius24-20;
+    @include adaptiveValue("padding-top", 44, 35,0,1920.98,480.98);
+    @include adaptiveValue("padding-bottom", 44, 20,0,1920.98,480.98);
+    @include adaptiveValue("padding-left", 32, 20,0,1920.98,480.98);
+    @include adaptiveValue("padding-right", 32, 20,0,1920.98,480.98);
+	}
+	// .opportunities__subtitle
+	&__subtitle {
+    text-align: center;
+    border-bottom: toRem(1) solid rgba(81, 81, 81, 0.5);
+    @include adaptiveValue("padding-bottom", 24, 15,0,1920.98,480.98);
+    @include adaptiveValue("margin-bottom", 24, 15,0,1920.98,480.98);
+	}
+	// .opportunities__txt
+	&__txt {
+    flex: 1;
+    text-align: center;
+    @include adaptiveValue("padding-bottom", 44, 30,0,1920.98,480.98);
+	}
+	// .opportunities__img
+	&__img {
+    img {
+      border-radius: toRem(10)
+    }
+	}
+}
+
+
+.event {
+  // .event__container
+  &__container {
+  }
+	// .event__head
+	&__head {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 60,26,0,1440.98,480.98 );
+    }
+	}
+  // .event__title
+  &__title {
+    color: #1f1101;
+    text-align: center;
+    @include adaptiveValue("font-size", 65, 35,0,1920.98,375.98);
+    @include adaptiveValue("margin-bottom", 26,8,0,1440.98,480.98 );
+  }
+  // .event__txt
+  &__txt {
+    line-height: 1.13;
+    text-align: center;
+    @include adaptiveValue("font-size", 24, 20,0,1920.98,480.98);
+  }
+  // .event__list
+  &__list {
+    display: grid;
+    @include adaptiveValue("gap", 15, 8,0,1920.98,480.98);
+    @media (min-width:toEm(700.98)){
+      grid-template-columns: .33fr .41fr .26fr;
+    }
+  }
+	// .event__first
+	&__first {
+    display: grid;
+    @include adaptiveValue("gap", 15, 8,0,1920.98,480.98);
+  }
+	// .event__center
+	&__center {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    @include adaptiveValue("gap", 15, 8,0,1920.98,480.98);
+    .event__item {
+      &:nth-child(1) {
+        grid-column: span 2;
+      }
+      &:nth-child(2) {
+      }
+      &:nth-child(3) {
+      }
+    }
+	}
+	// .event__last
+	&__last {
+    display: grid;
+    @include adaptiveValue("gap", 15, 8,0,1920.98,480.98);
+	}
+  // .event__item
+  &__item {
+    overflow: hidden;
+    border-radius: toRem(24);
+    @media (any-hover: hover){
+      &:hover{
+        img {
+          transform: scale(1.05);
+        }
+      }
+    }
+    img {
+      transition: transform .8s ease;
+      transform-origin: 50% 50%;
+    }
+  }
+  // .event__offer
+  &__offer {
+  }
+}
+
+.offer-event {
+  display: grid;
+  @extend %borderRadius24-20;
+  background-color: #fff;
+  @include adaptiveValue("gap", 44, 20,0,1920.98,480.98);
+  @include adaptiveValue("padding", 55, 20,0,1920.98,480.98);
+  h3 {
+    font-weight: 700;
+    @include adaptiveValue("margin-top", 45, 25,0,1920.98,480.98);
+    @include adaptiveValue("margin-bottom", 30, 15,0,1920.98,480.98);
+  }
+  ul {
+    li {
+      position: relative;
+      line-height: 1.5;
+      @include adaptiveValue("padding-left", 40, 26,0,1920.98,480.98);
+      &:before {
+        content:'';
+        position: absolute;
+        aspect-ratio: 1;
+        background-color:$mainColor;
+        border-radius: 50%;
+        @include adaptiveValue("width", 5, 3,0,1920.98,480.98);
+        @include adaptiveValue("left", 18,10,0,1920.98,480.98 );
+        @include adaptiveValue("top", 20,14,0,1920.98,480.98 );
+      }
+    }
+  }
+  img {
+    @extend %borderRadius24-10;
+  }
+  @media (min-width:toEm(700.98)){
+    grid-template-columns: 1fr 42%;
+  }
+  // .offer-event__info
+  &__info {
+  }
+  // .offer-event__imgs
+  &__imgs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    @include adaptiveValue("gap", 15, 8,0,1920.98,480.98);
+    img {
+      &:nth-child(1) {
+        // 1й єлемент ниже 700 переходит в другой блок
+        @media (min-width:toEm(700.98)){
+          grid-column: span 2;
+        }
+        // ниже 700.98 это по факту бывший 2й элемент
+        @media (max-width: toEm(700.98)){
+          aspect-ratio: 167/221;
+        }
+      }
+      &:nth-child(2) {
+        @media (min-width: toEm(700.98)){
+          aspect-ratio: 322/221;  
+        }
+        @media (max-width: toEm(700.98)){
+          aspect-ratio: 167/221;
+        }
+      }
+      &:nth-child(3) {
+        @media (min-width: toEm(700.98)){
+          aspect-ratio: 322/221;  
+        }
+      }
+    }
+  }
+}
+
+
+.formats {
+  // .formats__container
+  &__container {
+  }
+  // .formats__title
+  &__title {
+  }
+  // .formats__list
+  &__list {
+    display: grid;
+    gap: toRem(10);
+    @media (min-width: toEm(820.98)){
+      grid-template-columns: repeat(3,1fr);
+    }
+    @media (max-width: toEm(820.98)) and (min-width: toEm(500.98)) {
+      grid-template-columns: repeat(2,1fr);
+    }
+    @media (min-width:toEm(500.98)){
+    }
+  }
+  // .formats__item
+  &__item {
+    display: grid;
+    grid-template-columns: 19% 1fr;
+    align-items: center;
+    // gap: toRem(50);
+    background-color: #fff;
+    border-radius: toRem(20);
+    @include adaptiveValue("padding-inline", 50, 20,2,1920.98,500.98);
+    @include adaptiveValue("gap", 50, 20,2,1920.98,500.98);
+    @include adaptiveValue("padding-top", 46, 21,0,1920.98,480.98);
+    @include adaptiveValue("padding-bottom", 46, 21,0,1920.98,480.98);
+    @include adaptiveValue("font-size", 34, 20,0,1920.98,820.98);
+    @media (max-width: toEm(500.98)){
+        gap: toRem(50);
+        padding-inline: toRem(50);
+    }
+  }
+  // .formats__link
+  &__link {
+    margin-inline: auto;
   }
 }
 
